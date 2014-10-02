@@ -32,6 +32,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
 //    [self hideTopNavigationWithAnimation:YES];
+//    [self UpdateButton1NotificationLabel:@"ali"];
 }
 
 @end

@@ -109,12 +109,14 @@
     }
     _btNavMenu = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavMenu.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [_btNavMenu addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
     
     if (_btNavBack == nil) {
         _btNavBack = [[UIButton alloc] init];
     }
     _btNavBack = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavBack.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [_btNavBack addTarget:self action:@selector(tapNavBackButton) forControlEvents:UIControlEventTouchUpInside];
     
     //gruop button 1
     if (_btNavRight1 == nil) {
@@ -122,6 +124,7 @@
     }
     _btNavRight1 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight1.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [_btNavRight1 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote1 == nil) {
         _lblNavRightNote1 = [[UILabel alloc] init];
     }
@@ -136,6 +139,7 @@
     }
     _btNavRight2 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight2.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [_btNavRight2 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote2 == nil) {
         _lblNavRightNote2 = [[UILabel alloc] init];
     }
@@ -150,6 +154,7 @@
     }
     _btNavRight3 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight3.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [_btNavRight3 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote3 == nil) {
         _lblNavRightNote3 = [[UILabel alloc] init];
     }
@@ -164,6 +169,7 @@
     }
     _btNavRight4 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight4.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [_btNavRight4 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote4 == nil) {
         _lblNavRightNote4 = [[UILabel alloc] init];
     }
@@ -178,6 +184,7 @@
     }
     _btNavRight5 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight5.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [_btNavRight5 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote5 == nil) {
         _lblNavRightNote5 = [[UILabel alloc] init];
     }
@@ -552,33 +559,41 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - others functions - can be override
+#pragma mark - others functions - can be override - can be delete
 -(void)tapNavBackButton{
-
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)tapNavMenuButton{
+-(void)tapNavMenuButton{}
 
+-(void)tapNavButton1{}
+
+-(void)UpdateButton1NotificationLabel:(NSString *)note{
+    [_lblNavRightNote1 setText:note];
 }
 
--(void)tapNavButton1{
+-(void)tapNavButton2{}
 
+-(void)UpdateButton2NotificationLabel:(NSString *)note{
+    [_lblNavRightNote2 setText:note];
 }
 
--(void)tapNavButton2{
-    
+-(void)tapNavButton3{}
+
+-(void)UpdateButton3NotificationLabel:(NSString *)note{
+    [_lblNavRightNote3 setText:note];
 }
 
--(void)tapNavButton3{
-    
+-(void)tapNavButton4{}
+
+-(void)UpdateButton4NotificationLabel:(NSString *)note{
+    [_lblNavRightNote4 setText:note];
 }
 
--(void)tapNavButton4{
-    
-}
+-(void)tapNavButton5{}
 
--(void)tapNavButton5{
-    
+-(void)UpdateButton5NotificationLabel:(NSString *)note{
+    [_lblNavRightNote5 setText:note];
 }
 
 @end
