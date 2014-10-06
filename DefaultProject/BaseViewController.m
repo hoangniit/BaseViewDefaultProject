@@ -449,28 +449,6 @@
     [_imgNavTitle setImage:[UIImage imageNamed:imageName]];
     [_topPanelBar addSubview:_imgNavTitle];
     [_topPanelBar sendSubviewToBack:_imgNavTitle];
-    
-    //for test only
-    _topPanelBar.backgroundColor = [UIColor lightGrayColor];
-    [_btNavMenu setBackgroundColor:[UIColor greenColor]];
-    [_btNavBack setBackgroundColor:[UIColor greenColor]];
-    [_btNavRight1 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote1 setBackgroundColor:[UIColor redColor]];
-    [_lblNavRightNote1 setText:@"100"];
-    [_btNavRight2 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote2 setBackgroundColor:[UIColor greenColor]];
-    [_lblNavRightNote2 setText:@"67"];
-    [_btNavRight3 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote3 setBackgroundColor:[UIColor redColor]];
-    [_lblNavRightNote3 setText:@"57"];
-    [_btNavRight4 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote4 setBackgroundColor:[UIColor greenColor]];
-    [_lblNavRightNote4 setText:@"New"];
-    [_btNavRight5 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote5 setBackgroundColor:[UIColor redColor]];
-    [_lblNavRightNote5 setText:@"LAG"];
-    [_lblNavTitle setBackgroundColor:[UIColor whiteColor]];
-    //end test
 }
 
 -(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitle:(NSString *)title{
@@ -545,6 +523,129 @@
     }
 }
 
+#pragma mark - setup toolbar
+//create design
+-(void)createToolbar{
+    if (_bottomToolbar == nil) {
+        _bottomToolbar = [[UIView alloc] init];
+    }
+    _bottomToolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+}
+
+#define toolbarContactImageViewWidth 320.0
+#define toolbarLabelFont ([UIFont fontWithName:@"Helvetica" size:14.0])
+#define toolbarButtonFont ([UIFont fontWithName:@"Helvetica-Bold" size:16.0])
+
+-(void)createToolbarContactView{
+    if (_bottomContactView == nil) {
+        _bottomContactView = [[UIView alloc] init];
+    }
+    if (is_IOS7_or_Later) {
+        _bottomContactView.frame = CGRectMake((self.view.frame.size.width - toolbarContactImageViewWidth)/2, 0, toolbarContactImageViewWidth, iOS7_or_Later_ToolbarHeight);
+    }else{
+        _bottomContactView.frame = CGRectMake((self.view.frame.size.width - toolbarContactImageViewWidth)/2, 0, toolbarContactImageViewWidth, iOS6_ToolbarHeight);
+    }
+    _bottomContactView.autoresizingMask =  UIViewAutoresizingNone;
+    _bottomContactView.backgroundColor = [UIColor greenColor];
+    for (UIView *child in [_bottomContactView subviews]) {
+        [child removeFromSuperview];
+    }
+    //phone
+    UILabel *lblPhone = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 50, 20)];
+    [lblPhone setFont:toolbarLabelFont];
+    [lblPhone setText:@"Phone: "];
+    UIButton *btPhone = [[UIButton alloc] init];
+    btPhone = [UIButton buttonWithType:UIButtonTypeCustom];
+    btPhone.frame = CGRectMake(70, 5, toolbarContactImageViewWidth - 80, 20);
+    [btPhone.titleLabel setFont:toolbarButtonFont];
+    [btPhone setTitle:_toolbarPhoneString forState:UIControlStateNormal];
+    [btPhone setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    btPhone.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [btPhone addTarget:self action:@selector(tapToolbarContactPhone) forControlEvents:UIControlEventTouchUpInside];
+    
+    //email
+    UILabel *lblemail = [[UILabel alloc] initWithFrame:CGRectMake(10, 25, 50, 20)];
+    [lblemail setFont:toolbarLabelFont];
+    [lblemail setText:@"Email: "];
+    UIButton *btEmail = [[UIButton alloc] init];
+    btEmail = [UIButton buttonWithType:UIButtonTypeCustom];
+    btEmail.frame = CGRectMake(70, 25, toolbarContactImageViewWidth - 80, 20);
+    [btEmail.titleLabel setFont:toolbarButtonFont];
+    [btEmail setTitle:_toolbarEmailString forState:UIControlStateNormal];
+    [btEmail setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    btEmail.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [btEmail addTarget:self action:@selector(tapToolbarContactEmail) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_bottomContactView addSubview:lblPhone];
+    [_bottomContactView addSubview:btPhone];
+    [_bottomContactView addSubview:lblemail];
+    [_bottomContactView addSubview:btEmail];
+}
+
+-(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString{
+    _toolbarEmailString = emailString;
+    _toolbarPhoneString = phoneNumber;
+}
+
+-(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid{
+    _toolbarNumberOfbutton = numberOfButtons;
+    _toolbarButtonWidth = buttonWid;
+}
+
+-(void)setToolbarImage:(NSString *)imageName{
+    _toolbarImageName = imageName;
+}
+
+-(void)showBottomToolbarWithAnimation:(BOOL)ani withToolbarType:(ToolbarType) toolType{
+    [_bottomToolbar removeFromSuperview];
+    [self.view addSubview:_bottomToolbar];
+    for (UIView *child in [_bottomToolbar subviews]) {
+        [child removeFromSuperview];
+    }
+    switch (toolType) {
+        case Toolbar_type_button:
+        {
+        
+        }
+            break;
+        case Toolbar_type_image:
+        {
+        
+        }
+            break;
+        case Toolbar_type_contact:
+        {
+            [self createToolbarContactView];
+            [_bottomToolbar addSubview:_bottomContactView];
+        }
+            break;
+        default:
+            break;
+    }
+    [self showBottomToolbarWithAnimation:ani];
+}
+
+-(void)showBottomToolbarWithAnimation:(BOOL)ani{
+    float y = self.view.frame.size.height - iOS6_ToolbarHeight;
+    float hei = iOS6_ToolbarHeight;
+    if (is_IOS7_or_Later) {
+        y = self.view.frame.size.height - iOS7_or_Later_ToolbarHeight;
+        hei = iOS7_or_Later_ToolbarHeight;
+    }
+    
+    if (ani == YES) {
+        _bottomToolbar.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, hei);
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            _bottomToolbar.frame = CGRectMake(0, y, self.view.frame.size.width, hei);
+        }];
+    }else{
+        _bottomToolbar.frame = CGRectMake(0, y, self.view.frame.size.width, hei);
+    }
+}
+
+-(void)hideToolbarWithAnimation:(BOOL)ani{}
+
 #pragma mark - view setup
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -552,6 +653,31 @@
     [self createActiveView];
     [self createMainProcessView];
     [self createTopNavigationBarControls];
+    [self createToolbar];
+    
+    //for test only
+    _topPanelBar.backgroundColor = [UIColor lightGrayColor];
+    [_btNavMenu setBackgroundColor:[UIColor greenColor]];
+    [_btNavBack setBackgroundColor:[UIColor greenColor]];
+    [_btNavRight1 setBackgroundColor:[UIColor whiteColor]];
+    [_lblNavRightNote1 setBackgroundColor:[UIColor redColor]];
+    [_lblNavRightNote1 setText:@"100"];
+    [_btNavRight2 setBackgroundColor:[UIColor whiteColor]];
+    [_lblNavRightNote2 setBackgroundColor:[UIColor greenColor]];
+    [_lblNavRightNote2 setText:@"67"];
+    [_btNavRight3 setBackgroundColor:[UIColor whiteColor]];
+    [_lblNavRightNote3 setBackgroundColor:[UIColor redColor]];
+    [_lblNavRightNote3 setText:@"57"];
+    [_btNavRight4 setBackgroundColor:[UIColor whiteColor]];
+    [_lblNavRightNote4 setBackgroundColor:[UIColor greenColor]];
+    [_lblNavRightNote4 setText:@"New"];
+    [_btNavRight5 setBackgroundColor:[UIColor whiteColor]];
+    [_lblNavRightNote5 setBackgroundColor:[UIColor redColor]];
+    [_lblNavRightNote5 setText:@"LAG"];
+    [_lblNavTitle setBackgroundColor:[UIColor whiteColor]];
+    
+    [_bottomToolbar setBackgroundColor:[UIColor lightGrayColor]];
+    //end test
 }
 
 - (void)didReceiveMemoryWarning {
@@ -559,7 +685,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - others functions - can be override - can be delete
+#pragma mark - others functions - can be override
+#pragma mark navigation bar
 -(void)tapNavBackButton{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -595,5 +722,9 @@
 -(void)UpdateButton5NotificationLabel:(NSString *)note{
     [_lblNavRightNote5 setText:note];
 }
+#pragma mark bottom toolbar
+//toolbar
+-(void)tapToolbarContactPhone{}
+-(void)tapToolbarContactEmail{}
 
 @end

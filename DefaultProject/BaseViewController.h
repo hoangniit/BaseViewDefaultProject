@@ -20,6 +20,8 @@
 #define iOS6_NavHeight 44.0
 #define iOS7_or_Later_NavHeight 64.0
 #define iOS7_or_later_StatusBarHeight 20.0
+#define iOS6_ToolbarHeight 44.0
+#define iOS7_or_Later_ToolbarHeight 44.0
 
 #pragma mark - setup_inactive_view
 @property (strong,nonatomic) UIView *viewActive;
@@ -75,7 +77,33 @@ typedef enum{
 -(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitle:(NSString *)title;
 -(void)hideTopNavigationWithAnimation:(BOOL)ani;
 
-#pragma mark - others functions - can be override - can be delete
+#pragma mark - setup toolbar
+@property (strong,nonatomic) UIView *bottomToolbar;
+@property (strong,nonatomic) UIView *bottomContactView;
+@property (strong,nonatomic) UIView *bottomButtonView;
+@property (strong,nonatomic) UIView *bottomImageView;
+@property (strong,nonatomic) NSString *toolbarPhoneString;
+@property (strong,nonatomic) NSString *toolbarEmailString;
+@property (strong,nonatomic) NSString *toolbarImageName;
+@property (nonatomic) int toolbarNumberOfbutton;
+@property (nonatomic) float toolbarButtonWidth;
+
+typedef enum{
+    Toolbar_type_none = 0,
+    Toolbar_type_contact = 1,
+    Toolbar_type_button = 2,
+    Toolbar_type_image = 3,
+}ToolbarType;
+
+-(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString;
+-(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid;
+-(void)setToolbarImage:(NSString *)imageName;
+
+-(void)showBottomToolbarWithAnimation:(BOOL)ani withToolbarType:(ToolbarType) toolType;
+-(void)hideToolbarWithAnimation:(BOOL)ani;
+
+#pragma mark - others functions - can be override
+#pragma mark navigation bar
 -(void)tapNavBackButton;
 -(void)tapNavMenuButton;
 -(void)tapNavButton1;
@@ -88,5 +116,9 @@ typedef enum{
 -(void)UpdateButton4NotificationLabel:(NSString *)note;
 -(void)tapNavButton5;
 -(void)UpdateButton5NotificationLabel:(NSString *)note;
+#pragma mark bottom toolbar
+-(void)tapToolbarContactPhone;
+-(void)tapToolbarContactEmail;
+
 
 @end

@@ -23,6 +23,10 @@
 //    [self showProcess_WithTitle:@"Test process view"];
 //    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With5Buttons withTitle:@"Alibaba"];
     [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With2Buttons withTitleImage:@"test.jpg"];
+    
+    //setup toolbar
+    [self setToolbarContactsPhone:@"0933036596" andEmail:@"hoangniitsoftware@gmail.com"];
+    [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_contact];
 }
 
 - (void)didReceiveMemoryWarning {
