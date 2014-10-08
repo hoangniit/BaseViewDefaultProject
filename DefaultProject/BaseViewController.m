@@ -524,6 +524,14 @@
 }
 
 #pragma mark - setup toolbar
+-(void)removeToolbarChildControls{
+    [_bottomToolbar removeFromSuperview];
+    [self.view addSubview:_bottomToolbar];
+    for (UIView *child in [_bottomToolbar subviews]) {
+        [child removeFromSuperview];
+    }
+    _bottomContactView.contactDelegate = nil;
+}
 //create design
 -(void)createToolbar{
     if (_bottomToolbar == nil) {
@@ -532,59 +540,21 @@
     _bottomToolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
 }
 
-#define toolbarContactImageViewWidth 320.0
-#define toolbarLabelFont ([UIFont fontWithName:@"Helvetica" size:14.0])
-#define toolbarButtonFont ([UIFont fontWithName:@"Helvetica-Bold" size:16.0])
-
 -(void)createToolbarContactView{
     if (_bottomContactView == nil) {
-        _bottomContactView = [[UIView alloc] init];
+        _bottomContactView = [[ContactViewController alloc] init];
     }
+    float hei = iOS6_ToolbarHeight;
     if (is_IOS7_or_Later) {
-        _bottomContactView.frame = CGRectMake((self.view.frame.size.width - toolbarContactImageViewWidth)/2, 0, toolbarContactImageViewWidth, iOS7_or_Later_ToolbarHeight);
-    }else{
-        _bottomContactView.frame = CGRectMake((self.view.frame.size.width - toolbarContactImageViewWidth)/2, 0, toolbarContactImageViewWidth, iOS6_ToolbarHeight);
+        hei = iOS7_or_Later_ToolbarHeight;
     }
-    _bottomContactView.autoresizingMask =  UIViewAutoresizingNone;
-    _bottomContactView.backgroundColor = [UIColor greenColor];
-    for (UIView *child in [_bottomContactView subviews]) {
-        [child removeFromSuperview];
-    }
-    //phone
-    UILabel *lblPhone = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 50, 20)];
-    [lblPhone setFont:toolbarLabelFont];
-    [lblPhone setText:@"Phone: "];
-    UIButton *btPhone = [[UIButton alloc] init];
-    btPhone = [UIButton buttonWithType:UIButtonTypeCustom];
-    btPhone.frame = CGRectMake(70, 5, toolbarContactImageViewWidth - 80, 20);
-    [btPhone.titleLabel setFont:toolbarButtonFont];
-    [btPhone setTitle:_toolbarPhoneString forState:UIControlStateNormal];
-    [btPhone setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    btPhone.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [btPhone addTarget:self action:@selector(tapToolbarContactPhone) forControlEvents:UIControlEventTouchUpInside];
-    
-    //email
-    UILabel *lblemail = [[UILabel alloc] initWithFrame:CGRectMake(10, 25, 50, 20)];
-    [lblemail setFont:toolbarLabelFont];
-    [lblemail setText:@"Email: "];
-    UIButton *btEmail = [[UIButton alloc] init];
-    btEmail = [UIButton buttonWithType:UIButtonTypeCustom];
-    btEmail.frame = CGRectMake(70, 25, toolbarContactImageViewWidth - 80, 20);
-    [btEmail.titleLabel setFont:toolbarButtonFont];
-    [btEmail setTitle:_toolbarEmailString forState:UIControlStateNormal];
-    [btEmail setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    btEmail.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [btEmail addTarget:self action:@selector(tapToolbarContactEmail) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_bottomContactView addSubview:lblPhone];
-    [_bottomContactView addSubview:btPhone];
-    [_bottomContactView addSubview:lblemail];
-    [_bottomContactView addSubview:btEmail];
+    _bottomContactView.contactDelegate = self;
+    _bottomContactView.view.frame = CGRectMake(0, 0, self.view.frame.size.width, hei);
+    [_bottomToolbar addSubview:_bottomContactView.view];
 }
 
 -(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString{
-    _toolbarEmailString = emailString;
-    _toolbarPhoneString = phoneNumber;
+    [_bottomContactView setContactsPhone:phoneNumber andEmail:emailString];
 }
 
 -(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid{
@@ -597,11 +567,7 @@
 }
 
 -(void)showBottomToolbarWithAnimation:(BOOL)ani withToolbarType:(ToolbarType) toolType{
-    [_bottomToolbar removeFromSuperview];
-    [self.view addSubview:_bottomToolbar];
-    for (UIView *child in [_bottomToolbar subviews]) {
-        [child removeFromSuperview];
-    }
+    [self removeToolbarChildControls];
     switch (toolType) {
         case Toolbar_type_button:
         {
@@ -616,7 +582,6 @@
         case Toolbar_type_contact:
         {
             [self createToolbarContactView];
-            [_bottomToolbar addSubview:_bottomContactView];
         }
             break;
         default:
@@ -723,8 +688,5 @@
     [_lblNavRightNote5 setText:note];
 }
 #pragma mark bottom toolbar
-//toolbar
--(void)tapToolbarContactPhone{}
--(void)tapToolbarContactEmail{}
 
 @end

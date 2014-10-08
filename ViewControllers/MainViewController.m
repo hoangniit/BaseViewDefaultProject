@@ -25,8 +25,8 @@
     [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With2Buttons withTitleImage:@"test.jpg"];
     
     //setup toolbar
-    [self setToolbarContactsPhone:@"0933036596" andEmail:@"hoangniitsoftware@gmail.com"];
     [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_contact];
+    [self setToolbarContactsPhone:@"0933036596" andEmail:@"hoangniitsoftware@gmail.com"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,5 +38,9 @@
 //    [self hideTopNavigationWithAnimation:YES];
 //    [self UpdateButton1NotificationLabel:@"ali"];
 }
+
+//-(void)tapContactPhone{
+//    NSLog(@"alibaba show:");
+//}
 
 @end

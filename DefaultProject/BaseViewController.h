@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContactViewController.h"
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController <ContactViewDelegate>
 
 #pragma mark - default defines
 #define is_IOS7_or_Later ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ? YES : NO)
@@ -79,11 +80,9 @@ typedef enum{
 
 #pragma mark - setup toolbar
 @property (strong,nonatomic) UIView *bottomToolbar;
-@property (strong,nonatomic) UIView *bottomContactView;
+@property (strong,nonatomic) ContactViewController *bottomContactView;
 @property (strong,nonatomic) UIView *bottomButtonView;
 @property (strong,nonatomic) UIView *bottomImageView;
-@property (strong,nonatomic) NSString *toolbarPhoneString;
-@property (strong,nonatomic) NSString *toolbarEmailString;
 @property (strong,nonatomic) NSString *toolbarImageName;
 @property (nonatomic) int toolbarNumberOfbutton;
 @property (nonatomic) float toolbarButtonWidth;
@@ -116,9 +115,5 @@ typedef enum{
 -(void)UpdateButton4NotificationLabel:(NSString *)note;
 -(void)tapNavButton5;
 -(void)UpdateButton5NotificationLabel:(NSString *)note;
-#pragma mark bottom toolbar
--(void)tapToolbarContactPhone;
--(void)tapToolbarContactEmail;
-
 
 @end
