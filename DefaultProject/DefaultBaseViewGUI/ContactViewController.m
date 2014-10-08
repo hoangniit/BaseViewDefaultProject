@@ -18,11 +18,11 @@
     [super viewDidLoad];
     //phone
     [_btPhone.titleLabel setFont:toolbarButtonFont];
-    [_btPhone addTarget:self action:@selector(tapContactPhone) forControlEvents:UIControlEventTouchUpInside];
+    [_btPhone addTarget:self action:@selector(tapContactPhone:) forControlEvents:UIControlEventTouchUpInside];
     
     //email
     [_btEmail.titleLabel setFont:toolbarButtonFont];
-    [_btEmail addTarget:self action:@selector(tapContactEmail) forControlEvents:UIControlEventTouchUpInside];
+    [_btEmail addTarget:self action:@selector(tapContactEmail:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,31 +34,32 @@
     [_btEmail setTitle:emailString forState:UIControlStateNormal];
 }
 
--(void)tapContactPhone{
+#pragma mark - action override
+-(void)tapContactPhone:(id)sender{
     if (!_contactDelegate) {
-        NSLog(@"Not delegate, will call: %@", _btPhone.titleLabel.text);
+        NSLog(@"Will call phone number: %@", _btPhone.titleLabel.text);
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"tel:" stringByAppendingString:_btPhone.titleLabel.text]]];
     }else{
         @try {
-            [_contactDelegate tapContactPhone];
+            [_contactDelegate tapContactPhone:sender];
         }
         @catch (NSException *exception) {
-            NSLog(@"Not delegate, will call: %@", [@"tel:" stringByAppendingString:_btPhone.titleLabel.text]);
+            NSLog(@"Will call phone number: %@", _btPhone.titleLabel.text);
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"tel:" stringByAppendingString:_btPhone.titleLabel.text]]];
         }
     }
 }
 
--(void)tapContactEmail{
+-(void)tapContactEmail:(id)sender{
     if (!_contactDelegate) {
-        NSLog(@"Not delegate, will send email to: %@", _btEmail.titleLabel.text);
+        NSLog(@"Will send email to: %@", _btEmail.titleLabel.text);
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"mailto:" stringByAppendingString:_btEmail.titleLabel.text]]];
     }else{
         @try {
-            [_contactDelegate tapContactEmail];
+            [_contactDelegate tapContactEmail:sender];
         }
         @catch (NSException *exception) {
-            NSLog(@"Not delegate, will send email to: %@", _btEmail.titleLabel.text);
+            NSLog(@"Will send email to: %@", _btEmail.titleLabel.text);
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"mailto:" stringByAppendingString:_btEmail.titleLabel.text]]];
         }
     }

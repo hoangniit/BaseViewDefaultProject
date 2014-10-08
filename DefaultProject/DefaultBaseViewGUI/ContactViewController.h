@@ -10,8 +10,8 @@
 
 @protocol ContactViewDelegate <NSObject>
 
--(void)tapContactPhone;
--(void)tapContactEmail;
+-(void)tapContactPhone:(id)sender;
+-(void)tapContactEmail:(id)sender;
 
 @end
 
@@ -29,7 +29,7 @@
 
 -(void)setContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString;
 
--(void)tapContactPhone;
--(void)tapContactEmail;
+-(void)tapContactPhone:(id)sender;
+-(void)tapContactEmail:(id)sender;
 
 @end

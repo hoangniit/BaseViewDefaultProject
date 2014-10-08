@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ContactViewController.h"
+#import "ToolbarImageViewController.h"
 
 @interface BaseViewController : UIViewController <ContactViewDelegate>
 
@@ -80,9 +81,10 @@ typedef enum{
 
 #pragma mark - setup toolbar
 @property (strong,nonatomic) UIView *bottomToolbar;
+@property (strong,nonatomic) UIImageView *toolbarImgBackground;
 @property (strong,nonatomic) ContactViewController *bottomContactView;
 @property (strong,nonatomic) UIView *bottomButtonView;
-@property (strong,nonatomic) UIView *bottomImageView;
+@property (strong,nonatomic) ToolbarImageViewController *bottomImageView;
 @property (strong,nonatomic) NSString *toolbarImageName;
 @property (nonatomic) int toolbarNumberOfbutton;
 @property (nonatomic) float toolbarButtonWidth;
@@ -96,10 +98,13 @@ typedef enum{
 
 -(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString;
 -(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid;
--(void)setToolbarImage:(NSString *)imageName;
+-(void)setToolbarImage:(NSString *)imageName linkTo:(NSURL *)ulrLink;
 
 -(void)showBottomToolbarWithAnimation:(BOOL)ani withToolbarType:(ToolbarType) toolType;
 -(void)hideToolbarWithAnimation:(BOOL)ani;
+
+-(void)setToolbarBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
+-(void)setToolbarBackgroundColor:(UIColor *)color;
 
 #pragma mark - others functions - can be override
 #pragma mark navigation bar

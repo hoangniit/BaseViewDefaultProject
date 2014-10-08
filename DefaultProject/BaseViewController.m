@@ -103,6 +103,7 @@
         _topPanelBar = [[UIView alloc] init];
     }
     _topPanelBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    _topPanelBar.clipsToBounds = YES;
     
     if (_btNavMenu == nil) {
         _btNavMenu = [[UIButton alloc] init];
@@ -528,7 +529,9 @@
     [_bottomToolbar removeFromSuperview];
     [self.view addSubview:_bottomToolbar];
     for (UIView *child in [_bottomToolbar subviews]) {
-        [child removeFromSuperview];
+        if (![child isKindOfClass:[UIImageView class]]) {
+            [child removeFromSuperview];
+        }
     }
     _bottomContactView.contactDelegate = nil;
 }
@@ -538,6 +541,19 @@
         _bottomToolbar = [[UIView alloc] init];
     }
     _bottomToolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    _bottomToolbar.clipsToBounds = YES;
+    
+    if (_toolbarImgBackground == nil) {
+        _toolbarImgBackground = [[UIImageView alloc] init];
+    }
+    _toolbarImgBackground.frame = CGRectMake(0, 0, self.view.frame.size.width, iOS6_ToolbarHeight);
+    if (is_IOS7_or_Later) {
+        _toolbarImgBackground.frame = CGRectMake(0, 0, self.view.frame.size.width, iOS7_or_Later_ToolbarHeight);
+    }
+    
+    _toolbarImgBackground.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    
+    [_bottomToolbar addSubview:_toolbarImgBackground];
 }
 
 -(void)createToolbarContactView{
@@ -562,7 +578,7 @@
     _toolbarButtonWidth = buttonWid;
 }
 
--(void)setToolbarImage:(NSString *)imageName{
+-(void)setToolbarImage:(NSString *)imageName linkTo:(NSURL *)ulrLink{
     _toolbarImageName = imageName;
 }
 
@@ -609,7 +625,39 @@
     }
 }
 
--(void)hideToolbarWithAnimation:(BOOL)ani{}
+-(void)hideToolbarWithAnimation:(BOOL)ani{
+    float y = self.view.frame.size.height - iOS6_ToolbarHeight;
+    float hei = iOS6_ToolbarHeight;
+    if (is_IOS7_or_Later) {
+        y = self.view.frame.size.height - iOS7_or_Later_ToolbarHeight;
+        hei = iOS7_or_Later_ToolbarHeight;
+    }
+    
+    if (_bottomToolbar.frame.origin.y != self.view.frame.size.height) {
+        if (ani == YES) {
+            _bottomToolbar.frame = CGRectMake(0, y, self.view.frame.size.width, hei);
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                _bottomToolbar.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 0);
+            }];
+        }else{
+            _bottomToolbar.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 0);
+        }
+    }
+}
+
+-(void)setToolbarBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode{
+    _toolbarImgBackground.frame = CGRectMake(0, 0, self.view.frame.size.width, iOS6_ToolbarHeight);
+    if (is_IOS7_or_Later) {
+        _toolbarImgBackground.frame = CGRectMake(0, 0, self.view.frame.size.width, iOS7_or_Later_ToolbarHeight);
+    }
+    [_toolbarImgBackground setImage:image];
+    _toolbarImgBackground.contentMode = contentMode;
+}
+
+-(void)setToolbarBackgroundColor:(UIColor *)color{
+    [_bottomToolbar setBackgroundColor:color];
+}
 
 #pragma mark - view setup
 - (void)viewDidLoad {
