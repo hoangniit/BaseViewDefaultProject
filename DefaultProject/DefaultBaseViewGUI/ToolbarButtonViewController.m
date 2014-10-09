@@ -102,13 +102,13 @@
 
 -(void)tapToolbarButtonAtIndex:(NSIndexPath *)indexPath{
     if (!_toolbarButtonDelegate) {
-        NSLog(@"Tap button at index: %ld", (long)indexPath.row);
+        NSLog(@"Default tap button at index: %ld", (long)indexPath.row);
     }else{
         @try {
             [_toolbarButtonDelegate tapToolbarButtonAtIndex:indexPath];
         }
         @catch (NSException *exception) {
-            NSLog(@"Tap button at index: %ld", (long)indexPath.row);
+            NSLog(@"Default tap button at index: %ld", (long)indexPath.row);
         }
     }
 }

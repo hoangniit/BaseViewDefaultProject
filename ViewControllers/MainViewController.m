@@ -33,11 +33,10 @@
 //    [self setToolbarImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFit];
     //button
     [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_button];
-//    [self setToolbarNumberOfButtons:15 withButtonWidth:60 isScrollable:YES showTitle:YES withButtonImageArray:nil andButtonTitleArray:nil];
-    
     NSArray *buttonImgArr = [NSArray arrayWithObjects:@"new.png",@"save.png",@"search.png",@"settings.png",@"user.png",@"world.png", nil];
     NSArray *buttonTitleArr = [NSArray arrayWithObjects:@"new",@"save",@"search",@"settings",@"user",@"world", nil];
     [self setToolbarNumberOfButtons:6 withButtonWidth:60 isScrollable:YES showTitle:YES titleColor:[UIColor whiteColor] withButtonImageArray:buttonImgArr andButtonTitleArray:buttonTitleArr];
+    
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];
 }
@@ -62,6 +61,16 @@
 //        NSLog(@"alibaba is kind of class button");
 //    }else{
 //        NSLog(@"Fuck bugs");
+//    }
+//}
+
+//-(void)tapToolbarButtonAtIndex:(NSIndexPath *)indexPath{
+//    if (indexPath.row == 1) {
+//        NSLog(@"Delegate tap button at index 1");
+//    }else if (indexPath.row == 3){
+//        NSLog(@"Delegate tap button at index 3");
+//    }else{
+//        NSLog(@"Unknow");
 //    }
 //}
 
