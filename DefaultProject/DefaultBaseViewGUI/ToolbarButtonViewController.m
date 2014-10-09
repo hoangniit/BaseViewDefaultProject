@@ -93,6 +93,7 @@
     }else{
         _buttonCollectionView.contentSize = CGSizeMake(_buttonCollectionView.frame.size.width, _buttonCollectionView.frame.size.height);
     }
+    self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, _buttonCollectionView.frame.size.height);
 }
 
 @end

@@ -701,6 +701,8 @@
         [_bottomButtonView.buttonCollectionView reloadData];
         [_bottomButtonView.buttonCollectionView reloadInputViews];
     });
+    
+    [_bottomButtonView updateScrollable];
 }
 
 -(void)setToolbarButtonImageArray:(NSArray *)imageArr andTitleArray:(NSArray *)titleArray showTitle:(BOOL)isShowTitle{
