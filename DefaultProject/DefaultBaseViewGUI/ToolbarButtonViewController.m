@@ -48,8 +48,9 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString *cellIndentifer = toolbarButtonCellIden;
     ToolbarButtonCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIndentifer forIndexPath:indexPath];
-    
-    if ((!_buttonImageArray) || ([_buttonImageArray count])) {
+    [cell.buttonImage setBackgroundColor:[UIColor clearColor]];
+    [cell.buttonImage setImage:nil];
+    if ((!_buttonImageArray) || ([_buttonImageArray count]==0)) {
         [cell.buttonImage setBackgroundColor:[UIColor blueColor]];
         cell.buttonImage.layer.cornerRadius = cell.buttonImage.frame.size.height/2;
     }else{
@@ -64,7 +65,8 @@
     
     if (_isShowText == YES) {
         cell.buttonTitle.hidden = NO;
-        if ((!_buttonTitleArray) || ([_buttonTitleArray count])) {
+        [cell.buttonTitle setTextColor:_buttonTitleColor];
+        if ((!_buttonTitleArray) || ([_buttonTitleArray count]==0)) {
             [cell.buttonTitle setText:[@"Index" stringByAppendingString:[NSString stringWithFormat:@"%ld", (long)indexPath.row]]];
         }else{
             @try {
@@ -94,8 +96,6 @@
     if (edgeWid < 5) {
         edgeWid = 5;
     }
-    
-    CGRect Fsize = _buttonCollectionView.frame;
     
     return UIEdgeInsetsMake(0, edgeWid,0,edgeWid);  // top, left, bottom, right
 }

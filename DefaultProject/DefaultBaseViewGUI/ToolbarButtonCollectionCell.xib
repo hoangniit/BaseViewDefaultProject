@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="f5m-zS-v24">
-                        <rect key="frame" x="7" y="5" width="30" height="30"/>
+                        <rect key="frame" x="8" y="2" width="28" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label aaaaaaaaaaa" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ufh-6S-Rt3">

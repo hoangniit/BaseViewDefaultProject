@@ -691,11 +691,14 @@
     [_bottomToolbar addSubview:_bottomButtonView.view];
 }
 
--(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid isScrollable:(BOOL)isScrollable showTitle:(BOOL)isShowTitle{
+-(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid isScrollable:(BOOL)isScrollable showTitle:(BOOL)isShowTitle titleColor:(UIColor *)color withButtonImageArray:(NSArray *)imageArr andButtonTitleArray:(NSArray *)titleArray{
     _bottomButtonView.numberOfbutton = numberOfButtons;
     _bottomButtonView.buttonWidth = buttonWid;
     _bottomButtonView.isScrollable = isScrollable;
     _bottomButtonView.isShowText = isShowTitle;
+    _bottomButtonView.buttonImageArray = imageArr;
+    _bottomButtonView.buttonTitleArray = titleArray;
+    _bottomButtonView.buttonTitleColor = color;
     [_bottomButtonView updateScrollable];
     dispatch_async(dispatch_get_main_queue(), ^{
         [_bottomButtonView.buttonCollectionView reloadData];
@@ -703,10 +706,6 @@
     });
     
     [_bottomButtonView updateScrollable];
-}
-
--(void)setToolbarButtonImageArray:(NSArray *)imageArr andTitleArray:(NSArray *)titleArray showTitle:(BOOL)isShowTitle{
-    
 }
 
 #pragma mark - view setup

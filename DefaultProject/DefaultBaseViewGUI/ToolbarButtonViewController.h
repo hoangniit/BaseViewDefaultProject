@@ -24,6 +24,7 @@
 @property (strong,nonatomic) NSArray *buttonImageArray;
 @property (nonatomic) BOOL isShowText;
 @property (nonatomic) float buttonWidth;
+@property (strong,nonatomic) UIColor *buttonTitleColor;
 @property (nonatomic) NSInteger numberOfbutton;
 @property (nonatomic) BOOL isScrollable;
 

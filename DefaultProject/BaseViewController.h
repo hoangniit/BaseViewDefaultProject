@@ -108,8 +108,7 @@ typedef enum{
 -(void)setToolbarImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
 
 #pragma mark button toolbar
--(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid isScrollable:(BOOL)isScrollable showTitle:(BOOL)isShowTitle;
--(void)setToolbarButtonImageArray:(NSArray *)imageArr andTitleArray:(NSArray *)titleArray;
+-(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid isScrollable:(BOOL)isScrollable showTitle:(BOOL)isShowTitle titleColor:(UIColor *)color withButtonImageArray:(NSArray *)imageArr andButtonTitleArray:(NSArray *)titleArray;
 
 #pragma mark - others functions - can be override
 #pragma mark navigation bar
