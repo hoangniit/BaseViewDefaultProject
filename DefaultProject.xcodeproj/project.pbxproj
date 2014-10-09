@@ -21,6 +21,8 @@
 		54C0D92419E6773F00C47963 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91E19E6773F00C47963 /* settings.png */; };
 		54C0D92519E6773F00C47963 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91F19E6773F00C47963 /* user.png */; };
 		54C0D92619E6773F00C47963 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D92019E6773F00C47963 /* world.png */; };
+		54C0D92A19E67EBA00C47963 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C0D92819E67EBA00C47963 /* MenuViewController.m */; };
+		54C0D92B19E67EBA00C47963 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D92919E67EBA00C47963 /* MenuViewController.xib */; };
 		54DACCF119DD470900F2250A /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54DACCF019DD470900F2250A /* test.jpg */; };
 		54F4519119DBD5FD00B46374 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4519019DBD5FD00B46374 /* main.m */; };
 		54F4519419DBD5FD00B46374 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4519319DBD5FD00B46374 /* AppDelegate.m */; };
@@ -63,6 +65,9 @@
 		54C0D91E19E6773F00C47963 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		54C0D91F19E6773F00C47963 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		54C0D92019E6773F00C47963 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
+		54C0D92719E67EBA00C47963 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		54C0D92819E67EBA00C47963 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		54C0D92919E67EBA00C47963 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		54DACCF019DD470900F2250A /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		54F4518B19DBD5FD00B46374 /* DefaultProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefaultProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F4518F19DBD5FD00B46374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +122,9 @@
 				54C0D91619E646EF00C47963 /* ToolbarButtonCollectionCell.h */,
 				54C0D91719E646EF00C47963 /* ToolbarButtonCollectionCell.m */,
 				54C0D91819E646EF00C47963 /* ToolbarButtonCollectionCell.xib */,
+				54C0D92719E67EBA00C47963 /* MenuViewController.h */,
+				54C0D92819E67EBA00C47963 /* MenuViewController.m */,
+				54C0D92919E67EBA00C47963 /* MenuViewController.xib */,
 			);
 			path = DefaultBaseViewGUI;
 			sourceTree = "<group>";
@@ -352,6 +360,7 @@
 				54C0D92119E6773F00C47963 /* new.png in Resources */,
 				54C0D91A19E646EF00C47963 /* ToolbarButtonCollectionCell.xib in Resources */,
 				5418B2CF19E5266A00BC7578 /* ToolbarImageViewController.xib in Resources */,
+				54C0D92B19E67EBA00C47963 /* MenuViewController.xib in Resources */,
 				54C0D92219E6773F00C47963 /* save.png in Resources */,
 				54C0D92619E6773F00C47963 /* world.png in Resources */,
 				54C0D92319E6773F00C47963 /* search.png in Resources */,
@@ -385,6 +394,7 @@
 				54F4519419DBD5FD00B46374 /* AppDelegate.m in Sources */,
 				54F451C419DBDC6000B46374 /* DefineFlags.m in Sources */,
 				54C0D91119E62EBD00C47963 /* ToolbarButtonViewController.m in Sources */,
+				54C0D92A19E67EBA00C47963 /* MenuViewController.m in Sources */,
 				54F4519119DBD5FD00B46374 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
