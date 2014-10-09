@@ -29,9 +29,12 @@
 //    [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_contact];
 //    [self setToolbarContactsPhone:@"0933036596" andEmail:@"hoangniitsoftware@gmail.com"];
     //image
-    [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_image];
-    [self setToolbarImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFit];
-    
+//    [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_image];
+//    [self setToolbarImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFit];
+    //button
+    [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_button];
+    [self setToolbarNumberOfButtons:15 withButtonWidth:44.0 isScrollable:YES showTitle:YES];
+
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];
 }

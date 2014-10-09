@@ -535,6 +535,7 @@
     }
     _bottomContactView.contactDelegate = nil;
     _bottomImageView.toolbarImageDelegate = nil;
+    _bottomButtonView.toolbarButtonDelegate = nil;
 }
 
 -(void)createToolbar{
@@ -562,7 +563,7 @@
     switch (toolType) {
         case Toolbar_type_button:
         {
-            
+            [self createToolbarButtonView];
         }
             break;
         case Toolbar_type_image:
@@ -676,9 +677,34 @@
 
 #pragma mark button view
 
--(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid{
-    _toolbarNumberOfbutton = numberOfButtons;
-    _toolbarButtonWidth = buttonWid;
+-(void)createToolbarButtonView{
+    if (_bottomButtonView == nil) {
+        _bottomButtonView = [[ToolbarButtonViewController alloc] init];
+    }
+    float hei = iOS6_ToolbarHeight;
+    if (is_IOS7_or_Later) {
+        hei = iOS7_or_Later_ToolbarHeight;
+    }
+    _bottomButtonView.toolbarButtonDelegate = self;
+    _bottomButtonView.view.frame = CGRectMake(0, 0, self.view.frame.size.width, hei);
+    
+    [_bottomToolbar addSubview:_bottomButtonView.view];
+}
+
+-(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid isScrollable:(BOOL)isScrollable showTitle:(BOOL)isShowTitle{
+    _bottomButtonView.numberOfbutton = numberOfButtons;
+    _bottomButtonView.buttonWidth = buttonWid;
+    _bottomButtonView.isScrollable = isScrollable;
+    _bottomButtonView.isShowText = isShowTitle;
+    [_bottomButtonView updateScrollable];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_bottomButtonView.buttonCollectionView reloadData];
+        [_bottomButtonView.buttonCollectionView reloadInputViews];
+    });
+}
+
+-(void)setToolbarButtonImageArray:(NSArray *)imageArr andTitleArray:(NSArray *)titleArray showTitle:(BOOL)isShowTitle{
+    
 }
 
 #pragma mark - view setup

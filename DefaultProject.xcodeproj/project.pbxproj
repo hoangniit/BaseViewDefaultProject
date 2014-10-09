@@ -11,6 +11,10 @@
 		5418B2CF19E5266A00BC7578 /* ToolbarImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5418B2CD19E5266A00BC7578 /* ToolbarImageViewController.xib */; };
 		5472041C19E5020D007ACDE5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5472041A19E5020D007ACDE5 /* ContactViewController.m */; };
 		5472041D19E5020D007ACDE5 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5472041B19E5020D007ACDE5 /* ContactViewController.xib */; };
+		54C0D91119E62EBD00C47963 /* ToolbarButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C0D90F19E62EBD00C47963 /* ToolbarButtonViewController.m */; };
+		54C0D91219E62EBD00C47963 /* ToolbarButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91019E62EBD00C47963 /* ToolbarButtonViewController.xib */; };
+		54C0D91919E646EF00C47963 /* ToolbarButtonCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C0D91719E646EF00C47963 /* ToolbarButtonCollectionCell.m */; };
+		54C0D91A19E646EF00C47963 /* ToolbarButtonCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91819E646EF00C47963 /* ToolbarButtonCollectionCell.xib */; };
 		54DACCF119DD470900F2250A /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54DACCF019DD470900F2250A /* test.jpg */; };
 		54F4519119DBD5FD00B46374 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4519019DBD5FD00B46374 /* main.m */; };
 		54F4519419DBD5FD00B46374 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4519319DBD5FD00B46374 /* AppDelegate.m */; };
@@ -41,6 +45,12 @@
 		5472041919E5020D007ACDE5 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		5472041A19E5020D007ACDE5 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		5472041B19E5020D007ACDE5 /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
+		54C0D90E19E62EBD00C47963 /* ToolbarButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarButtonViewController.h; sourceTree = "<group>"; };
+		54C0D90F19E62EBD00C47963 /* ToolbarButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarButtonViewController.m; sourceTree = "<group>"; };
+		54C0D91019E62EBD00C47963 /* ToolbarButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarButtonViewController.xib; sourceTree = "<group>"; };
+		54C0D91619E646EF00C47963 /* ToolbarButtonCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarButtonCollectionCell.h; sourceTree = "<group>"; };
+		54C0D91719E646EF00C47963 /* ToolbarButtonCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarButtonCollectionCell.m; sourceTree = "<group>"; };
+		54C0D91819E646EF00C47963 /* ToolbarButtonCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarButtonCollectionCell.xib; sourceTree = "<group>"; };
 		54DACCF019DD470900F2250A /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		54F4518B19DBD5FD00B46374 /* DefaultProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefaultProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F4518F19DBD5FD00B46374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +99,12 @@
 				5418B2CB19E5266A00BC7578 /* ToolbarImageViewController.h */,
 				5418B2CC19E5266A00BC7578 /* ToolbarImageViewController.m */,
 				5418B2CD19E5266A00BC7578 /* ToolbarImageViewController.xib */,
+				54C0D90E19E62EBD00C47963 /* ToolbarButtonViewController.h */,
+				54C0D90F19E62EBD00C47963 /* ToolbarButtonViewController.m */,
+				54C0D91019E62EBD00C47963 /* ToolbarButtonViewController.xib */,
+				54C0D91619E646EF00C47963 /* ToolbarButtonCollectionCell.h */,
+				54C0D91719E646EF00C47963 /* ToolbarButtonCollectionCell.m */,
+				54C0D91819E646EF00C47963 /* ToolbarButtonCollectionCell.xib */,
 			);
 			path = DefaultBaseViewGUI;
 			sourceTree = "<group>";
@@ -313,6 +329,8 @@
 			files = (
 				54F451A219DBD5FD00B46374 /* LaunchScreen.xib in Resources */,
 				5472041D19E5020D007ACDE5 /* ContactViewController.xib in Resources */,
+				54C0D91219E62EBD00C47963 /* ToolbarButtonViewController.xib in Resources */,
+				54C0D91A19E646EF00C47963 /* ToolbarButtonCollectionCell.xib in Resources */,
 				5418B2CF19E5266A00BC7578 /* ToolbarImageViewController.xib in Resources */,
 				54F4519F19DBD5FD00B46374 /* Images.xcassets in Resources */,
 				54DACCF119DD470900F2250A /* test.jpg in Resources */,
@@ -336,11 +354,13 @@
 			files = (
 				5472041C19E5020D007ACDE5 /* ContactViewController.m in Sources */,
 				54F4519719DBD5FD00B46374 /* DefaultProject.xcdatamodeld in Sources */,
+				54C0D91919E646EF00C47963 /* ToolbarButtonCollectionCell.m in Sources */,
 				54F451C719DBDD3900B46374 /* MainViewController.m in Sources */,
 				54F451BE19DBD8CD00B46374 /* BaseViewController.m in Sources */,
 				5418B2CE19E5266A00BC7578 /* ToolbarImageViewController.m in Sources */,
 				54F4519419DBD5FD00B46374 /* AppDelegate.m in Sources */,
 				54F451C419DBDC6000B46374 /* DefineFlags.m in Sources */,
+				54C0D91119E62EBD00C47963 /* ToolbarButtonViewController.m in Sources */,
 				54F4519119DBD5FD00B46374 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

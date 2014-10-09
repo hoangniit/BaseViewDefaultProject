@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ContactViewController.h"
 #import "ToolbarImageViewController.h"
+#import "ToolbarButtonViewController.h"
 
-@interface BaseViewController : UIViewController <ContactViewDelegate,ToolbarImageDelegate>
+@interface BaseViewController : UIViewController <ContactViewDelegate,ToolbarImageDelegate,ButtonToolbarDelegate>
 
 #pragma mark - default defines
 #define is_IOS7_or_Later ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ? YES : NO)
@@ -84,7 +85,7 @@ typedef enum{
 @property (strong,nonatomic) UIImageView *toolbarImgBackground;
 @property (strong,nonatomic) ContactViewController *bottomContactView;
 @property (strong,nonatomic) ToolbarImageViewController *bottomImageView;
-@property (strong,nonatomic) UIView *bottomButtonView;
+@property (strong,nonatomic) ToolbarButtonViewController *bottomButtonView;
 @property (nonatomic) int toolbarNumberOfbutton;
 @property (nonatomic) float toolbarButtonWidth;
 
@@ -94,16 +95,21 @@ typedef enum{
     Toolbar_type_button = 2,
     Toolbar_type_image = 3,
 }ToolbarType;
-
--(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString;
--(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid;
--(void)setToolbarImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
-
+#pragma mark toolbar
+-(void)setToolbarBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
+-(void)setToolbarBackgroundColor:(UIColor *)color;
 -(void)showBottomToolbarWithAnimation:(BOOL)ani withToolbarType:(ToolbarType) toolType;
 -(void)hideToolbarWithAnimation:(BOOL)ani;
 
--(void)setToolbarBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
--(void)setToolbarBackgroundColor:(UIColor *)color;
+#pragma mark contact toolbar
+-(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString;
+
+#pragma mark image toolbar
+-(void)setToolbarImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
+
+#pragma mark button toolbar
+-(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid isScrollable:(BOOL)isScrollable showTitle:(BOOL)isShowTitle;
+-(void)setToolbarButtonImageArray:(NSArray *)imageArr andTitleArray:(NSArray *)titleArray;
 
 #pragma mark - others functions - can be override
 #pragma mark navigation bar
