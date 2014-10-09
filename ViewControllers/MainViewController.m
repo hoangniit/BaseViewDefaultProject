@@ -33,7 +33,7 @@
 //    [self setToolbarImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFit];
     //button
     [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_button];
-    [self setToolbarNumberOfButtons:15 withButtonWidth:44.0 isScrollable:YES showTitle:YES];
+    [self setToolbarNumberOfButtons:15 withButtonWidth:60 isScrollable:YES showTitle:YES];
 
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];

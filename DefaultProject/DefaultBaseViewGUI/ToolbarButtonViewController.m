@@ -20,6 +20,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [_buttonCollectionView  registerNib:[UINib nibWithNibName:@"ToolbarButtonCollectionCell" bundle:nil] forCellWithReuseIdentifier:toolbarButtonCellIden];
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
+}
+
+- (void) orientationChanged:(NSNotification *)note
+{
+    [self collectionView:_buttonCollectionView layout:_buttonCollectionView.collectionViewLayout insetForSectionAtIndex:0];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_buttonCollectionView reloadData];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +82,22 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self tapToolbarButtonAtIndex:indexPath];
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(_buttonWidth, _buttonCollectionView.frame.size.height);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    // return UIEdgeInsetsMake(0,8,0,8);  // top, left, bottom, right
+    float edgeWid = ([UIScreen mainScreen].bounds.size.width - (_numberOfbutton * _buttonWidth))/2;
+    if (edgeWid < 5) {
+        edgeWid = 5;
+    }
+    
+    CGRect Fsize = _buttonCollectionView.frame;
+    
+    return UIEdgeInsetsMake(0, edgeWid,0,edgeWid);  // top, left, bottom, right
 }
 
 -(void)tapToolbarButtonAtIndex:(NSIndexPath *)indexPath{

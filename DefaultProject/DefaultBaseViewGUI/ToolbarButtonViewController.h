@@ -15,7 +15,7 @@
 
 @end
 
-@interface ToolbarButtonViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>
+@interface ToolbarButtonViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (strong,nonatomic) IBOutlet UICollectionView *buttonCollectionView;
 
