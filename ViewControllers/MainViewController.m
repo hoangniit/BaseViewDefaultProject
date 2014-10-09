@@ -21,8 +21,15 @@
 
 -(void)viewWillAppear:(BOOL)animated{
 //    [self showProcess_WithTitle:@"Test process view"];
-//    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With5Buttons withTitle:@"Alibaba"];
-    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With2Buttons withTitleImage:@"test.jpg"];
+    [baseResource setNavigationMenuImageName:@"settings.png"];
+    [baseResource setNavigationBackImageName:@"new.png"];
+    [baseResource setNavigationButton1ImageName:@"search.png"];
+    [baseResource setNavigationButton2ImageName:@"search.png"];
+    [baseResource setNavigationButton3ImageName:@"save.png"];
+    [baseResource setNavigationButton4ImageName:@"search.png"];
+    [baseResource setNavigationButton5ImageName:@"search.png"];
+//    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithMenuBack andRightButtons:right_With5Buttons withTitleImage:@"test.jpg"];
+    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With3Buttons withTitle:@"Người đi buôn lậu"];
     
     //setup toolbar
     //contact toolbar

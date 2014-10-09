@@ -10,6 +10,7 @@
 #import "ContactViewController.h"
 #import "ToolbarImageViewController.h"
 #import "ToolbarButtonViewController.h"
+#import "BaseViewResource.h"
 
 @interface BaseViewController : UIViewController <ContactViewDelegate,ToolbarImageDelegate,ButtonToolbarDelegate>
 
@@ -25,6 +26,7 @@
 #define iOS7_or_later_StatusBarHeight 20.0
 #define iOS6_ToolbarHeight 44.0
 #define iOS7_or_Later_ToolbarHeight 44.0
+#define baseResource ([BaseViewResource resource])
 
 #pragma mark - setup_inactive_view
 @property (strong,nonatomic) UIView *viewActive;

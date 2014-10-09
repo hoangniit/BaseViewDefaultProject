@@ -125,7 +125,7 @@
     }
     _btNavRight1 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight1.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [_btNavRight1 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
+    [_btNavRight1 addTarget:self action:@selector(tapNavButton1) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote1 == nil) {
         _lblNavRightNote1 = [[UILabel alloc] init];
     }
@@ -140,7 +140,7 @@
     }
     _btNavRight2 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight2.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [_btNavRight2 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
+    [_btNavRight2 addTarget:self action:@selector(tapNavButton2) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote2 == nil) {
         _lblNavRightNote2 = [[UILabel alloc] init];
     }
@@ -155,7 +155,7 @@
     }
     _btNavRight3 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight3.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [_btNavRight3 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
+    [_btNavRight3 addTarget:self action:@selector(tapNavButton3) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote3 == nil) {
         _lblNavRightNote3 = [[UILabel alloc] init];
     }
@@ -170,7 +170,7 @@
     }
     _btNavRight4 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight4.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [_btNavRight4 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
+    [_btNavRight4 addTarget:self action:@selector(tapNavButton4) forControlEvents:UIControlEventTouchUpInside];
     if (_lblNavRightNote4 == nil) {
         _lblNavRightNote4 = [[UILabel alloc] init];
     }
@@ -185,8 +185,7 @@
     }
     _btNavRight5 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btNavRight5.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [_btNavRight5 addTarget:self action:@selector(tapNavMenuButton) forControlEvents:UIControlEventTouchUpInside];
-    if (_lblNavRightNote5 == nil) {
+    [_btNavRight5 addTarget:self action:@selector(tapNavButton5) forControlEvents:UIControlEventTouchUpInside];    if (_lblNavRightNote5 == nil) {
         _lblNavRightNote5 = [[UILabel alloc] init];
     }
     _lblNavRightNote5.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
@@ -224,6 +223,14 @@
     if (is_IOS7_or_Later) {
         y = 20 + ((iOS6_NavHeight -30)/2);
     }
+    
+    [_btNavMenu setImage:[UIImage imageNamed:baseResource.navMenuImage] forState:UIControlStateNormal];
+    [_btNavBack setImage:[UIImage imageNamed:baseResource.navBackImage] forState:UIControlStateNormal];
+    [_btNavRight1 setImage:[UIImage imageNamed:baseResource.navButton1Img] forState:UIControlStateNormal];
+    [_btNavRight2 setImage:[UIImage imageNamed:baseResource.navButton2Img] forState:UIControlStateNormal];
+    [_btNavRight3 setImage:[UIImage imageNamed:baseResource.navButton3Img] forState:UIControlStateNormal];
+    [_btNavRight4 setImage:[UIImage imageNamed:baseResource.navButton4Img] forState:UIControlStateNormal];
+    [_btNavRight5 setImage:[UIImage imageNamed:baseResource.navButton5Img] forState:UIControlStateNormal];
     
     //left buttons
     switch (leftButtons) {
@@ -719,25 +726,25 @@
     
     //for test only
     _topPanelBar.backgroundColor = [UIColor lightGrayColor];
-    [_btNavMenu setBackgroundColor:[UIColor greenColor]];
-    [_btNavBack setBackgroundColor:[UIColor greenColor]];
-    [_btNavRight1 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote1 setBackgroundColor:[UIColor redColor]];
-    [_lblNavRightNote1 setText:@"100"];
-    [_btNavRight2 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote2 setBackgroundColor:[UIColor greenColor]];
-    [_lblNavRightNote2 setText:@"67"];
-    [_btNavRight3 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote3 setBackgroundColor:[UIColor redColor]];
-    [_lblNavRightNote3 setText:@"57"];
-    [_btNavRight4 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote4 setBackgroundColor:[UIColor greenColor]];
-    [_lblNavRightNote4 setText:@"New"];
-    [_btNavRight5 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote5 setBackgroundColor:[UIColor redColor]];
-    [_lblNavRightNote5 setText:@"LAG"];
-    [_lblNavTitle setBackgroundColor:[UIColor whiteColor]];
-    
+//    [_btNavMenu setBackgroundColor:[UIColor greenColor]];
+//    [_btNavBack setBackgroundColor:[UIColor greenColor]];
+//    [_btNavRight1 setBackgroundColor:[UIColor whiteColor]];
+//    [_lblNavRightNote1 setBackgroundColor:[UIColor redColor]];
+//    [_lblNavRightNote1 setText:@"100"];
+//    [_btNavRight2 setBackgroundColor:[UIColor whiteColor]];
+//    [_lblNavRightNote2 setBackgroundColor:[UIColor greenColor]];
+//    [_lblNavRightNote2 setText:@"67"];
+//    [_btNavRight3 setBackgroundColor:[UIColor whiteColor]];
+//    [_lblNavRightNote3 setBackgroundColor:[UIColor redColor]];
+//    [_lblNavRightNote3 setText:@"57"];
+//    [_btNavRight4 setBackgroundColor:[UIColor whiteColor]];
+//    [_lblNavRightNote4 setBackgroundColor:[UIColor greenColor]];
+//    [_lblNavRightNote4 setText:@"New"];
+//    [_btNavRight5 setBackgroundColor:[UIColor whiteColor]];
+//    [_lblNavRightNote5 setBackgroundColor:[UIColor redColor]];
+//    [_lblNavRightNote5 setText:@"LAG"];
+//    [_lblNavTitle setBackgroundColor:[UIColor whiteColor]];
+//    
     [_bottomToolbar setBackgroundColor:[UIColor lightGrayColor]];
     //end test
 }
@@ -749,41 +756,28 @@
 
 #pragma mark - others functions - can be override
 #pragma mark navigation bar
--(void)tapNavBackButton{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+-(void)tapNavBackButton{ [self.navigationController popViewControllerAnimated:YES]; }
 
--(void)tapNavMenuButton{}
+-(void)tapNavMenuButton{ NSLog(@"Tap menu"); }
 
--(void)tapNavButton1{}
+-(void)tapNavButton1{ NSLog(@"Tap nav 1 button"); }
 
--(void)UpdateButton1NotificationLabel:(NSString *)note{
-    [_lblNavRightNote1 setText:note];
-}
+-(void)UpdateButton1NotificationLabel:(NSString *)note{ [_lblNavRightNote1 setText:note]; }
 
--(void)tapNavButton2{}
+-(void)tapNavButton2{ NSLog(@"Tap nav 2 button"); }
 
--(void)UpdateButton2NotificationLabel:(NSString *)note{
-    [_lblNavRightNote2 setText:note];
-}
+-(void)UpdateButton2NotificationLabel:(NSString *)note{ [_lblNavRightNote2 setText:note]; }
 
--(void)tapNavButton3{}
+-(void)tapNavButton3{ NSLog(@"Tap nav 3 button"); }
 
--(void)UpdateButton3NotificationLabel:(NSString *)note{
-    [_lblNavRightNote3 setText:note];
-}
+-(void)UpdateButton3NotificationLabel:(NSString *)note{ [_lblNavRightNote3 setText:note]; }
 
--(void)tapNavButton4{}
+-(void)tapNavButton4{ NSLog(@"Tap nav 4 button"); }
 
--(void)UpdateButton4NotificationLabel:(NSString *)note{
-    [_lblNavRightNote4 setText:note];
-}
+-(void)UpdateButton4NotificationLabel:(NSString *)note{ [_lblNavRightNote4 setText:note]; }
 
--(void)tapNavButton5{}
+-(void)tapNavButton5{ NSLog(@"Tap nav 5 button"); }
 
--(void)UpdateButton5NotificationLabel:(NSString *)note{
-    [_lblNavRightNote5 setText:note];
-}
-#pragma mark bottom toolbar
+-(void)UpdateButton5NotificationLabel:(NSString *)note{ [_lblNavRightNote5 setText:note]; }
 
 @end

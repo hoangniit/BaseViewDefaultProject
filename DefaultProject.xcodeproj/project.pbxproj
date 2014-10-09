@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5418B2CE19E5266A00BC7578 /* ToolbarImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5418B2CC19E5266A00BC7578 /* ToolbarImageViewController.m */; };
 		5418B2CF19E5266A00BC7578 /* ToolbarImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5418B2CD19E5266A00BC7578 /* ToolbarImageViewController.xib */; };
+		54254D7919E689780093EA74 /* BaseViewResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254D7819E689780093EA74 /* BaseViewResource.m */; };
 		5472041C19E5020D007ACDE5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5472041A19E5020D007ACDE5 /* ContactViewController.m */; };
 		5472041D19E5020D007ACDE5 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5472041B19E5020D007ACDE5 /* ContactViewController.xib */; };
 		54C0D91119E62EBD00C47963 /* ToolbarButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C0D90F19E62EBD00C47963 /* ToolbarButtonViewController.m */; };
@@ -50,6 +51,8 @@
 		5418B2CB19E5266A00BC7578 /* ToolbarImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarImageViewController.h; sourceTree = "<group>"; };
 		5418B2CC19E5266A00BC7578 /* ToolbarImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarImageViewController.m; sourceTree = "<group>"; };
 		5418B2CD19E5266A00BC7578 /* ToolbarImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarImageViewController.xib; sourceTree = "<group>"; };
+		54254D7719E689780093EA74 /* BaseViewResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewResource.h; sourceTree = "<group>"; };
+		54254D7819E689780093EA74 /* BaseViewResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewResource.m; sourceTree = "<group>"; };
 		5472041919E5020D007ACDE5 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		5472041A19E5020D007ACDE5 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		5472041B19E5020D007ACDE5 /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
@@ -107,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54254D7319E687F90093EA74 /* BaseViewResourceSingleton */ = {
+			isa = PBXGroup;
+			children = (
+				54254D7719E689780093EA74 /* BaseViewResource.h */,
+				54254D7819E689780093EA74 /* BaseViewResource.m */,
+			);
+			path = BaseViewResourceSingleton;
+			sourceTree = "<group>";
+		};
 		5472041819E501F8007ACDE5 /* DefaultBaseViewGUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +182,7 @@
 		54F4518D19DBD5FD00B46374 /* DefaultProject */ = {
 			isa = PBXGroup;
 			children = (
+				54254D7319E687F90093EA74 /* BaseViewResourceSingleton */,
 				5472041819E501F8007ACDE5 /* DefaultBaseViewGUI */,
 				54F4519219DBD5FD00B46374 /* AppDelegate.h */,
 				54F4519319DBD5FD00B46374 /* AppDelegate.m */,
@@ -389,6 +402,7 @@
 				54F4519719DBD5FD00B46374 /* DefaultProject.xcdatamodeld in Sources */,
 				54C0D91919E646EF00C47963 /* ToolbarButtonCollectionCell.m in Sources */,
 				54F451C719DBDD3900B46374 /* MainViewController.m in Sources */,
+				54254D7919E689780093EA74 /* BaseViewResource.m in Sources */,
 				54F451BE19DBD8CD00B46374 /* BaseViewController.m in Sources */,
 				5418B2CE19E5266A00BC7578 /* ToolbarImageViewController.m in Sources */,
 				54F4519419DBD5FD00B46374 /* AppDelegate.m in Sources */,

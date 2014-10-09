@@ -6,7 +6,12 @@
          contextName = "-[ContactViewController tapContactPhone]:ContactViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[ToolbarButtonViewController collectionView:cellForItemAtIndexPath:]:ToolbarButtonViewController.m">
+         contextName = "-[ToolbarButtonViewController viewDidLoad]:ToolbarButtonViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_numberOfbutton">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[ToolbarButtonViewController updateScrollable]:ToolbarButtonViewController.m">
@@ -17,18 +22,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[ToolbarButtonViewController collectionView:cellForItemAtIndexPath:]:ToolbarButtonViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[BaseViewController hideToolbarWithAnimation:]:BaseViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "_bottomToolbar.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[ToolbarButtonViewController viewDidLoad]:ToolbarButtonViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "_numberOfbutton">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
