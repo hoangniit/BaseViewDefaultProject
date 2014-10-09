@@ -20,6 +20,7 @@
 
 @property (strong,nonatomic) IBOutlet UIButton *btTapImage;
 @property (strong,nonatomic) IBOutlet UIImageView *imgToolbar;
+@property (strong,nonatomic) id <ToolbarImageDelegate> toolbarImageDelegate;
 
 -(void)tapToolbarImage:(id)sender;
 

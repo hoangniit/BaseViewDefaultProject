@@ -10,7 +10,7 @@
 #import "ContactViewController.h"
 #import "ToolbarImageViewController.h"
 
-@interface BaseViewController : UIViewController <ContactViewDelegate>
+@interface BaseViewController : UIViewController <ContactViewDelegate,ToolbarImageDelegate>
 
 #pragma mark - default defines
 #define is_IOS7_or_Later ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ? YES : NO)
@@ -83,9 +83,8 @@ typedef enum{
 @property (strong,nonatomic) UIView *bottomToolbar;
 @property (strong,nonatomic) UIImageView *toolbarImgBackground;
 @property (strong,nonatomic) ContactViewController *bottomContactView;
-@property (strong,nonatomic) UIView *bottomButtonView;
 @property (strong,nonatomic) ToolbarImageViewController *bottomImageView;
-@property (strong,nonatomic) NSString *toolbarImageName;
+@property (strong,nonatomic) UIView *bottomButtonView;
 @property (nonatomic) int toolbarNumberOfbutton;
 @property (nonatomic) float toolbarButtonWidth;
 
@@ -98,7 +97,7 @@ typedef enum{
 
 -(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString;
 -(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid;
--(void)setToolbarImage:(NSString *)imageName linkTo:(NSURL *)ulrLink;
+-(void)setToolbarImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
 
 -(void)showBottomToolbarWithAnimation:(BOOL)ani withToolbarType:(ToolbarType) toolType;
 -(void)hideToolbarWithAnimation:(BOOL)ani;

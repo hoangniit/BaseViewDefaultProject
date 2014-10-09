@@ -25,8 +25,12 @@
     [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With2Buttons withTitleImage:@"test.jpg"];
     
     //setup toolbar
-    [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_contact];
-    [self setToolbarContactsPhone:@"0933036596" andEmail:@"hoangniitsoftware@gmail.com"];
+    //contact toolbar
+//    [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_contact];
+//    [self setToolbarContactsPhone:@"0933036596" andEmail:@"hoangniitsoftware@gmail.com"];
+    //image
+    [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_image];
+    [self setToolbarImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFit];
     
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];
@@ -43,12 +47,16 @@
 //    [self hideToolbarWithAnimation:YES];
 }
 
--(void)tapContactPhone:(id)sender{
-    if ([sender isKindOfClass:[UIButton class]]) {
-        NSLog(@"alibaba is kind of class button");
-    }else{
-        NSLog(@"Fuck bugs");
-    }
-}
+//-(void)tapToolbarImage:(id)sender{
+//    NSLog(@"detect delegate");
+//}
+
+//-(void)tapContactPhone:(id)sender{
+//    if ([sender isKindOfClass:[UIButton class]]) {
+//        NSLog(@"alibaba is kind of class button");
+//    }else{
+//        NSLog(@"Fuck bugs");
+//    }
+//}
 
 @end

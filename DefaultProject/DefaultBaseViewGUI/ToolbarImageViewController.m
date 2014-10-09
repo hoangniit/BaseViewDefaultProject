@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    [_btTapImage addTarget:self action:@selector(tapToolbarImage:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,7 +26,17 @@
 }
 
 -(void)tapToolbarImage:(id)sender{
-
+    if (!_toolbarImageDelegate) {
+        NSLog(@"Tap toolbar Image, no delegate");
+    }else{
+        @try {
+            //default function here
+            [_toolbarImageDelegate tapToolbarImage:sender];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Tap toolbar image, no delegate");
+        }
+    }
 }
 
 @end

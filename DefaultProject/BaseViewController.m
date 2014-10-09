@@ -534,8 +534,9 @@
         }
     }
     _bottomContactView.contactDelegate = nil;
+    _bottomImageView.toolbarImageDelegate = nil;
 }
-//create design
+
 -(void)createToolbar{
     if (_bottomToolbar == nil) {
         _bottomToolbar = [[UIView alloc] init];
@@ -556,43 +557,17 @@
     [_bottomToolbar addSubview:_toolbarImgBackground];
 }
 
--(void)createToolbarContactView{
-    if (_bottomContactView == nil) {
-        _bottomContactView = [[ContactViewController alloc] init];
-    }
-    float hei = iOS6_ToolbarHeight;
-    if (is_IOS7_or_Later) {
-        hei = iOS7_or_Later_ToolbarHeight;
-    }
-    _bottomContactView.contactDelegate = self;
-    _bottomContactView.view.frame = CGRectMake(0, 0, self.view.frame.size.width, hei);
-    [_bottomToolbar addSubview:_bottomContactView.view];
-}
-
--(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString{
-    [_bottomContactView setContactsPhone:phoneNumber andEmail:emailString];
-}
-
--(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid{
-    _toolbarNumberOfbutton = numberOfButtons;
-    _toolbarButtonWidth = buttonWid;
-}
-
--(void)setToolbarImage:(NSString *)imageName linkTo:(NSURL *)ulrLink{
-    _toolbarImageName = imageName;
-}
-
 -(void)showBottomToolbarWithAnimation:(BOOL)ani withToolbarType:(ToolbarType) toolType{
     [self removeToolbarChildControls];
     switch (toolType) {
         case Toolbar_type_button:
         {
-        
+            
         }
             break;
         case Toolbar_type_image:
         {
-        
+            [self createToolbarImageView];
         }
             break;
         case Toolbar_type_contact:
@@ -657,6 +632,53 @@
 
 -(void)setToolbarBackgroundColor:(UIColor *)color{
     [_bottomToolbar setBackgroundColor:color];
+}
+
+#pragma mark contact view
+
+-(void)createToolbarContactView{
+    if (_bottomContactView == nil) {
+        _bottomContactView = [[ContactViewController alloc] init];
+    }
+    float hei = iOS6_ToolbarHeight;
+    if (is_IOS7_or_Later) {
+        hei = iOS7_or_Later_ToolbarHeight;
+    }
+    _bottomContactView.contactDelegate = self;
+    _bottomContactView.view.frame = CGRectMake(0, 0, self.view.frame.size.width, hei);
+    [_bottomToolbar addSubview:_bottomContactView.view];
+}
+
+-(void)setToolbarContactsPhone:(NSString *)phoneNumber andEmail:(NSString *)emailString{
+    [_bottomContactView setContactsPhone:phoneNumber andEmail:emailString];
+}
+
+#pragma mark image view
+
+-(void)createToolbarImageView{
+    if (_bottomImageView == nil) {
+        _bottomImageView = [[ToolbarImageViewController alloc] init];
+    }
+    float hei = iOS6_ToolbarHeight;
+    if (is_IOS7_or_Later) {
+        hei = iOS7_or_Later_ToolbarHeight;
+    }
+    _bottomImageView.toolbarImageDelegate = self;
+    _bottomImageView.view.frame = CGRectMake(0, 0, self.view.frame.size.width, hei);
+    
+    [_bottomToolbar addSubview:_bottomImageView.view];
+}
+
+-(void)setToolbarImage:(UIImage *)image withContentMode:(UIViewContentMode)contentMode{
+    [_bottomImageView.imgToolbar setContentMode:contentMode];
+    [_bottomImageView.imgToolbar setImage:image];
+}
+
+#pragma mark button view
+
+-(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid{
+    _toolbarNumberOfbutton = numberOfButtons;
+    _toolbarButtonWidth = buttonWid;
 }
 
 #pragma mark - view setup
