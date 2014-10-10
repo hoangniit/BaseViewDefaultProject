@@ -715,6 +715,16 @@
     [_bottomButtonView updateScrollable];
 }
 
+#pragma mark slide menu
+-(void)createSlideMenu{
+    if (_slideMenu == nil) {
+        _slideMenu = [[MenuViewController alloc] init];
+    }
+    _slideMenu.view.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    _slideMenu.view.layer.borderWidth =  1.0;
+    [self.view addSubview:_slideMenu.view];
+}
+
 #pragma mark - view setup
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -732,8 +742,8 @@
 //    [_lblNavRightNote1 setBackgroundColor:[UIColor redColor]];
 //    [_lblNavRightNote1 setText:@"100"];
 //    [_btNavRight2 setBackgroundColor:[UIColor whiteColor]];
-//    [_lblNavRightNote2 setBackgroundColor:[UIColor greenColor]];
-//    [_lblNavRightNote2 setText:@"67"];
+    [_lblNavRightNote2 setBackgroundColor:[UIColor redColor]];
+    [_lblNavRightNote2 setText:@"67"];
 //    [_btNavRight3 setBackgroundColor:[UIColor whiteColor]];
 //    [_lblNavRightNote3 setBackgroundColor:[UIColor redColor]];
 //    [_lblNavRightNote3 setText:@"57"];
@@ -747,6 +757,15 @@
 //    
     [_bottomToolbar setBackgroundColor:[UIColor lightGrayColor]];
     //end test
+    
+    [self createSlideMenu];
+    _slideMenu.view.frame = CGRectMake(0, 64, menuWid, self.view.frame.size.height - 108);
+    [_slideMenu setTopMenuType:topMenuTypeSearch];
+    [_slideMenu menuTop_setImage:[UIImage imageNamed:@"save.png"]];
+    [_slideMenu menuTop_setTitle:@"Buông thần"];
+    [_slideMenu menuTop_SetTitleFontColor:[UIColor blueColor]];
+    [_slideMenu menuTop_setDescription:@"Bán thánh"];
+    [_slideMenu menuTop_setSearchButtonImage:[UIImage imageNamed:@"search.png"]];
 }
 
 - (void)didReceiveMemoryWarning {

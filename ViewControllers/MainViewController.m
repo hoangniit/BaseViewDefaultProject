@@ -40,9 +40,17 @@
 //    [self setToolbarImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFit];
     //button
     [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_button];
-    NSArray *buttonImgArr = [NSArray arrayWithObjects:@"new.png",@"save.png",@"search.png",@"settings.png",@"user.png",@"world.png", nil];
-    NSArray *buttonTitleArr = [NSArray arrayWithObjects:@"new",@"save",@"search",@"settings",@"user",@"world", nil];
-    [self setToolbarNumberOfButtons:6 withButtonWidth:60 isScrollable:YES showTitle:YES titleColor:[UIColor whiteColor] withButtonImageArray:buttonImgArr andButtonTitleArray:buttonTitleArr];
+    NSArray *buttonImgArr = [NSArray arrayWithObjects:@"new.png",@"save.png",@"search.png",@"settings.png",@"user.png",@"test.jpg", nil];
+//    NSArray *buttonTitleArr = [NSArray arrayWithObjects:@"new",@"save",@"search",@"settings",@"user",@"world", nil];
+    [self setToolbarNumberOfButtons:6 withButtonWidth:60 isScrollable:YES showTitle:YES titleColor:[UIColor whiteColor] withButtonImageArray:buttonImgArr andButtonTitleArray:nil];
+    
+    
+    [self.slideMenu setTopMenuType:topMenuTypeImageTitleDesciption];
+    [self.slideMenu menuTop_setImage:[UIImage imageNamed:@"save.png"]];
+    [self.slideMenu menuTop_setTitle:@"Buông thần"];
+    [self.slideMenu menuTop_SetTitleFontColor:[UIColor blueColor]];
+    [self.slideMenu menuTop_setDescription:@"Bán thánh"];
+    [self.slideMenu menuTop_setSearchButtonImage:[UIImage imageNamed:@"search.png"]];
     
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];

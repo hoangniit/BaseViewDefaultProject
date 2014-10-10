@@ -8,29 +8,72 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController
+@protocol MenuDelegate <NSObject>
+
+-(void)tapTopImage:(id)sender;
+-(void)tapTopTitle:(id)sender;
+-(void)tapTopDescription:(id)sender;
+-(void)topMenuWillSearch;
+
+@end
+
+@interface MenuViewController : UIViewController <UITextFieldDelegate>
+
+@property (strong,nonatomic) id <MenuDelegate> slideMenuDelegate;
+
+#define menuWid 228.0
+#define panelHei 44.0
 
 #pragma mark - top panel
 typedef enum{
     topMenuTypeDefault = 0,
     topMenuTypeImage = 1,
-    topMenuTypeAccount = 2,
-    topMenuTypeSearch = 3,
-    topMenuTypeLogoWithText = 4,
-    topMenuTypeLogoWith2Textline = 5,
+    topMenuTypeImageTitle = 2,
+    topMenuTypeImageTitleDesciption = 3,
+    topMenuTypeSearch = 4,
 }TopMenuType;
 
-//@property (strong,nonatomic) UIImageView *topImage;
-//@property (strong,nonatomic) UITextField *searchText;
-//@property (strong,nonatomic) UILabel *lblTextLine1;
-//@property (strong,nonatomic) UILabel *lblTextLine2;
+@property (strong,nonatomic) IBOutlet UIView *topPanel;
+@property (strong,nonatomic) IBOutlet UIImageView *topPanelBackground;
+@property (nonatomic) TopMenuType topType;
+@property (nonatomic) BOOL isShowTopMenu;
+
+@property (strong,nonatomic) UIImageView *topMenuImage;
+@property (strong,nonatomic) UIButton *topMenuImageButton;
+@property (strong,nonatomic) UIButton *topMenuTitle;
+@property (strong,nonatomic) UIButton *topMenuDescription;
+@property (strong,nonatomic) UITextField *topSearchField;
+@property (strong,nonatomic) UIButton *topButtonSearch;
+
+-(void)showMenuTopPanel:(BOOL)isShowTop;
+-(void)setTopMenuBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode)contentMode;
+-(void)setTopMenuBackgroundColor:(UIColor *)color;
+-(void)setTopMenuType:(TopMenuType)topType;
+
+-(void)menuTop_setImage:(UIImage *)image;
+
+-(void)menuTop_setTitle:(NSString *)title;
+-(void)menuTop_SetTitleFont:(UIFont *)titleFont;
+-(void)menuTop_SetTitleFontColor:(UIColor *)titleFontColor;
+
+-(void)menuTop_setDescription:(NSString *)desciption;
+-(void)menuTop_setDescriptionFont:(UIFont *)desciptionFont;
+-(void)menuTop_setDescriptionFontColor:(UIColor *)desciptionFontColor;
+
+-(void)menuTop_setSearchFieldPlaceHolder:(NSString *)placeHolderText;
+-(void)menuTop_setSearchFieldFont:(UIFont *)searchFieldFont;
+-(void)menuTop_setSearchFieldFontColor:(UIColor *)searchFieldFontColor;
+
+-(void)menuTop_setSearchButtonImage:(UIImage *)searchImage;
+
+-(void)tapTopImage:(id)sender;
+-(void)tapTopTitle:(id)sender;
+-(void)tapTopDescription:(id)sender;
+-(void)topMenuWillSearch;
 
 #pragma mark - bottom panel
 typedef enum{
     bottomMenuTypeDefault = 0,
-    bottomMenu1Button = 1,
-    bottomMenu2Button = 2,
-    bottomMenu3Button = 3,
 }BottomMenuType;
 
 @property (nonatomic) BOOL showBottomPanelText;
