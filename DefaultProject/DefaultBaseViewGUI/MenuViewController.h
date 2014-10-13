@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewResource.h"
+
+#pragma mark -
 
 @protocol MenuDelegate <NSObject>
 
@@ -15,7 +18,45 @@
 -(void)tapTopDescription:(id)sender;
 -(void)topMenuWillSearch;
 
+-(void)tapBottomButton1:(id)sender;
+-(void)tapBottomButton2:(id)sender;
+-(void)tapBottomButton3:(id)sender;
+
 @end
+
+#pragma mark -
+
+@interface BottomUnitView : UIView
+
+#define defaultBottomButtonFont ([UIFont fontWithName:@"Helvetica" size:13.0])
+
+@property (strong,nonatomic) IBOutlet UILabel *buttonTitle;
+@property (strong,nonatomic) IBOutlet UIImageView *buttonImage;
+@property (strong,nonatomic) IBOutlet UIButton *buttonMain;
+
+@end
+
+#pragma mark -
+
+@interface BottomButtonTitles : NSObject
+
+@property (strong,nonatomic) NSString *button1Title;
+@property (strong,nonatomic) NSString *button2Title;
+@property (strong,nonatomic) NSString *button3Title;
+
+@end
+
+#pragma mark -
+
+@interface BottomButtonImages : NSObject
+
+@property (strong,nonatomic) UIImage *button1Image;
+@property (strong,nonatomic) UIImage *button2Image;
+@property (strong,nonatomic) UIImage *button3Image;
+
+@end
+
+#pragma mark -
 
 @interface MenuViewController : UIViewController <UITextFieldDelegate>
 
@@ -74,8 +115,32 @@ typedef enum{
 #pragma mark - bottom panel
 typedef enum{
     bottomMenuTypeDefault = 0,
+    bottomMenuType1Button = 1,
+    bottomMenuType2Buttons = 2,
+    bottomMenuType3Buttons = 3,
 }BottomMenuType;
 
+@property (strong,nonatomic) IBOutlet UIView *bottomPanel;
+@property (strong,nonatomic) IBOutlet UIImageView *bottomPanelBackground;
+
 @property (nonatomic) BOOL showBottomPanelText;
+@property (nonatomic) BottomMenuType bottomMenuType;
+@property (nonatomic) BOOL isShowBottomMenu;
+@property (strong,nonatomic) BottomButtonTitles *bottomButtonTitles;
+@property (strong,nonatomic) BottomButtonImages *bottomButtonImages;
+
+-(void)showMenuBottomPanel:(BOOL)isShowBottom;
+-(void)setBottomMenuBackgroundColor:(UIColor *)backgroundColor;
+-(void)setBottomMenuBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode)contentMode;
+-(void)setBottomMenuType:(BottomMenuType)bottomMenuType;
+
+-(void)menuBottom_setButtonFont:(UIFont *)fontName;
+-(void)menuBottom_setButtonFontColor:(UIColor *)fontColor;
+
+-(void)menuBottom_setBottomButtonImages:(BottomButtonImages *)bottomButtonImage;
+-(void)menuBottom_setBottomButtonTitles:(BottomButtonTitles *)bottomButtonTitle;
+
+#pragma mark - menu panel
+@property (strong,nonatomic) IBOutlet UITableView *tbvMainMenu;
 
 @end

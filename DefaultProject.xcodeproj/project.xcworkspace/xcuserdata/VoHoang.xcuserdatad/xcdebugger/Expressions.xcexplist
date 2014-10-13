@@ -6,10 +6,10 @@
          contextName = "-[ContactViewController tapContactPhone]:ContactViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[ToolbarButtonViewController viewDidLoad]:ToolbarButtonViewController.m">
+         contextName = "-[BaseViewController hideToolbarWithAnimation:]:BaseViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "_numberOfbutton">
+               value = "_bottomToolbar.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,13 +22,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[MainViewController viewWillAppear:]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bottomSlideTitle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[ToolbarButtonViewController collectionView:cellForItemAtIndexPath:]:ToolbarButtonViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[BaseViewController hideToolbarWithAnimation:]:BaseViewController.m">
+         contextName = "-[ToolbarButtonViewController viewDidLoad]:ToolbarButtonViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "_bottomToolbar.frame">
+               value = "_numberOfbutton">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

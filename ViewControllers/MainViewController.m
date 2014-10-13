@@ -17,10 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
--(void)viewWillAppear:(BOOL)animated{
-//    [self showProcess_WithTitle:@"Test process view"];
+    
     [baseResource setNavigationMenuImageName:@"settings.png"];
     [baseResource setNavigationBackImageName:@"new.png"];
     [baseResource setNavigationButton1ImageName:@"search.png"];
@@ -28,6 +25,17 @@
     [baseResource setNavigationButton3ImageName:@"save.png"];
     [baseResource setNavigationButton4ImageName:@"search.png"];
     [baseResource setNavigationButton5ImageName:@"search.png"];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+//    [self showProcess_WithTitle:@"Test process view"];
+//    [baseResource setNavigationMenuImageName:@"settings.png"];
+//    [baseResource setNavigationBackImageName:@"new.png"];
+//    [baseResource setNavigationButton1ImageName:@"search.png"];
+//    [baseResource setNavigationButton2ImageName:@"search.png"];
+//    [baseResource setNavigationButton3ImageName:@"save.png"];
+//    [baseResource setNavigationButton4ImageName:@"search.png"];
+//    [baseResource setNavigationButton5ImageName:@"search.png"];
 //    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithMenuBack andRightButtons:right_With5Buttons withTitleImage:@"test.jpg"];
     [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With3Buttons withTitle:@"Người đi buôn lậu"];
     
@@ -44,13 +52,33 @@
 //    NSArray *buttonTitleArr = [NSArray arrayWithObjects:@"new",@"save",@"search",@"settings",@"user",@"world", nil];
     [self setToolbarNumberOfButtons:6 withButtonWidth:60 isScrollable:YES showTitle:YES titleColor:[UIColor whiteColor] withButtonImageArray:buttonImgArr andButtonTitleArray:nil];
     
-    
     [self.slideMenu setTopMenuType:topMenuTypeImageTitleDesciption];
     [self.slideMenu menuTop_setImage:[UIImage imageNamed:@"save.png"]];
     [self.slideMenu menuTop_setTitle:@"Buông thần"];
     [self.slideMenu menuTop_SetTitleFontColor:[UIColor blueColor]];
     [self.slideMenu menuTop_setDescription:@"Bán thánh"];
     [self.slideMenu menuTop_setSearchButtonImage:[UIImage imageNamed:@"search.png"]];
+    
+    [self.slideMenu setBottomMenuType:bottomMenuType3Buttons];
+    BottomButtonTitles *bottomSlideTitle = [[BottomButtonTitles alloc] init];
+    bottomSlideTitle.button1Title = @"Buôn thần";
+    bottomSlideTitle.button2Title = @"Bán thánh";
+    bottomSlideTitle.button3Title = @"Oánh CA";
+    [self.slideMenu menuBottom_setBottomButtonTitles:bottomSlideTitle];
+    [self.slideMenu menuBottom_setButtonFontColor:[UIColor blueColor]];
+    
+    
+    BottomButtonImages *bottomSlideImage = [[BottomButtonImages alloc] init];
+    bottomSlideImage.button1Image = [UIImage imageNamed:@"new.png"];
+    bottomSlideImage.button2Image = [UIImage imageNamed:@"search.png"];
+    bottomSlideImage.button3Image = [UIImage imageNamed:@"settings.png"];
+    [self.slideMenu menuBottom_setBottomButtonImages:bottomSlideImage];
+    
+    [self.slideMenu setBottomMenuBackgroundColor:[UIColor lightGrayColor]];
+    
+    
+    [self.slideMenu showMenuTopPanel:YES];
+    [self.slideMenu showMenuBottomPanel:YES];
     
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];
