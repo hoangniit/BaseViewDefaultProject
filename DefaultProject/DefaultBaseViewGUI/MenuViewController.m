@@ -480,7 +480,65 @@
         hei = hei - 44;
     }
     
-    _tbvMainMenu.frame = CGRectMake(x, y, wid, hei);
+    _tableMenuItem.frame = CGRectMake(x, y, wid, hei);
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (!_slideMenuDelegate) {
+        NSLog(@"Not delegate");
+        return 0;
+    }else{
+        @try {
+            return [_slideMenuDelegate slideMenuNumberOfSectionsInMenu];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Not delegate");
+            return 0;
+        }
+    }
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (!_slideMenuDelegate) {
+        NSLog(@"Not delegate");
+        return 0;
+    }else{
+        @try {
+            return [_slideMenuDelegate slideMenuNumberOfItemsInMenuSection:section];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Not delegate");
+            return 0;
+        }
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!_slideMenuDelegate) {
+        NSLog(@"Not delegate");
+        return nil;
+    }else{
+        @try {
+            return [_slideMenuDelegate slideMenuItemAtIndexPath:indexPath];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Not delegate");
+            return nil;
+        }
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!_slideMenuDelegate) {
+        NSLog(@"Not delegate, tap item at index: %@", [NSString stringWithFormat:@"%ld",(long)indexPath.row]);
+    }else{
+        @try {
+            return [_slideMenuDelegate slideMenuDidSelectItemAtIndexPath:indexPath];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Not delegate, tap item at index: %@", [NSString stringWithFormat:@"%ld",(long)indexPath.row]);
+        }
+    }
 }
 
 @end

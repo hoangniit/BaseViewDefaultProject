@@ -9,7 +9,7 @@
             <connections>
                 <outlet property="bottomPanel" destination="2rH-ov-U0T" id="leZ-nv-iIT"/>
                 <outlet property="bottomPanelBackground" destination="k38-Vb-M5J" id="QfU-1d-CVJ"/>
-                <outlet property="tbvMainMenu" destination="wAP-84-FXp" id="ITU-h4-rtQ"/>
+                <outlet property="tableMenuItem" destination="wAP-84-FXp" id="tm8-0n-HNg"/>
                 <outlet property="topPanel" destination="jMC-Ms-xqo" id="Oip-Lz-4bQ"/>
                 <outlet property="topPanelBackground" destination="ey4-fd-RuA" id="wUg-Fd-zmr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -47,6 +47,10 @@
                     <rect key="frame" x="0.0" y="44" width="228" height="338"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="rch-HS-c5r"/>
+                        <outlet property="delegate" destination="-1" id="LSN-uC-SSe"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

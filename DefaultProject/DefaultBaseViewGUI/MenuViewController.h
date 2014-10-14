@@ -22,6 +22,11 @@
 -(void)tapBottomButton2:(id)sender;
 -(void)tapBottomButton3:(id)sender;
 
+-(NSInteger)slideMenuNumberOfSectionsInMenu;
+-(NSInteger)slideMenuNumberOfItemsInMenuSection:(NSInteger)section;
+-(UITableViewCell *)slideMenuItemAtIndexPath:(NSIndexPath *)indexPath;
+-(void)slideMenuDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 #pragma mark -
@@ -58,7 +63,7 @@
 
 #pragma mark -
 
-@interface MenuViewController : UIViewController <UITextFieldDelegate>
+@interface MenuViewController : UIViewController <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong,nonatomic) id <MenuDelegate> slideMenuDelegate;
 
@@ -141,6 +146,20 @@ typedef enum{
 -(void)menuBottom_setBottomButtonTitles:(BottomButtonTitles *)bottomButtonTitle;
 
 #pragma mark - menu panel
-@property (strong,nonatomic) IBOutlet UITableView *tbvMainMenu;
+@property (strong,nonatomic) IBOutlet UITableView *tableMenuItem;
+
+typedef enum{
+    slideMenuTypeDefault = 0,
+    slideMenuTypeTitle = 1,
+    slideMenuTypeTitleDescription = 2,
+    slideMenuTypeTitleWithButton = 3,
+    slideMenuTypeTitleDescriptionWithButton = 4,
+    slideMenuTypeImageTitle = 5,
+    slideMenuTypeImageTitleDescription = 6,
+    slideMenuTypeImageTitleWithButton = 7,
+    slideMenuTypeImageTitleDescriptionWithButton = 8,
+}SlideMenuCellType;
+
+@property (nonatomic) SlideMenuCellType slideMenuCellType;
 
 @end

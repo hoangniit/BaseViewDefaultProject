@@ -29,6 +29,7 @@
 
 -(void)activeView{
     _viewActive.alpha = 0.7;
+    [self.view bringSubviewToFront:_viewActive];
     [_viewActive setUserInteractionEnabled:YES];
 }
 
@@ -89,6 +90,7 @@
     [_processTitle setText:title];
     float x = (self.view.frame.size.width - 300) / 2;
     _viewProcess.frame = CGRectMake(x, self.view.frame.size.height/2 - 40, 300, 80);
+    [self.view bringSubviewToFront:_viewProcess];
 }
 
 -(void)hideProcess{

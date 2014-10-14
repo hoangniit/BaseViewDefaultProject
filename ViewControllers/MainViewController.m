@@ -28,7 +28,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-//    [self showProcess_WithTitle:@"Test process view"];
 //    [baseResource setNavigationMenuImageName:@"settings.png"];
 //    [baseResource setNavigationBackImageName:@"new.png"];
 //    [baseResource setNavigationButton1ImageName:@"search.png"];
@@ -49,8 +48,8 @@
     //button
     [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_button];
     NSArray *buttonImgArr = [NSArray arrayWithObjects:@"new.png",@"save.png",@"search.png",@"settings.png",@"user.png",@"test.jpg", nil];
-//    NSArray *buttonTitleArr = [NSArray arrayWithObjects:@"new",@"save",@"search",@"settings",@"user",@"world", nil];
-    [self setToolbarNumberOfButtons:6 withButtonWidth:60 isScrollable:YES showTitle:YES titleColor:[UIColor whiteColor] withButtonImageArray:buttonImgArr andButtonTitleArray:nil];
+    NSArray *buttonTitleArr = [NSArray arrayWithObjects:@"new",@"save",@"search",@"settings",@"user",@"world", nil];
+    [self setToolbarNumberOfButtons:6 withButtonWidth:60 isScrollable:YES showTitle:YES titleColor:[UIColor whiteColor] withButtonImageArray:buttonImgArr andButtonTitleArray:buttonTitleArr];
     
     [self.slideMenu setTopMenuType:topMenuTypeImageTitleDesciption];
     [self.slideMenu menuTop_setImage:[UIImage imageNamed:@"save.png"]];
@@ -80,8 +79,11 @@
     [self.slideMenu showMenuTopPanel:YES];
     [self.slideMenu showMenuBottomPanel:YES];
     
+    self.slideMenu.slideMenuDelegate = self;
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];
+    
+//    [self showProcess_WithTitle:@"Bây giờ chú muốn hốt ai ?"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,5 +118,27 @@
 //        NSLog(@"Unknow");
 //    }
 //}
+
+-(NSInteger)slideMenuNumberOfSectionsInMenu{
+    return 2;
+}
+
+-(NSInteger)slideMenuNumberOfItemsInMenuSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            return 6;
+            break;
+            
+        default:
+            return 11;
+            break;
+    }
+}
+
+-(UITableViewCell *)slideMenuItemAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MenuCellItem"];
+    [cell.textLabel setText:[NSString stringWithFormat:@"Cell Index: %ld",(long)indexPath.row]];
+    return cell;
+}
 
 @end
