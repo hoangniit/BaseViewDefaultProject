@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5418B2CE19E5266A00BC7578 /* ToolbarImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5418B2CC19E5266A00BC7578 /* ToolbarImageViewController.m */; };
-		5418B2CF19E5266A00BC7578 /* ToolbarImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5418B2CD19E5266A00BC7578 /* ToolbarImageViewController.xib */; };
-		54254D7919E689780093EA74 /* BaseViewResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254D7819E689780093EA74 /* BaseViewResource.m */; };
-		5472041C19E5020D007ACDE5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5472041A19E5020D007ACDE5 /* ContactViewController.m */; };
-		5472041D19E5020D007ACDE5 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5472041B19E5020D007ACDE5 /* ContactViewController.xib */; };
-		54C0D91119E62EBD00C47963 /* ToolbarButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C0D90F19E62EBD00C47963 /* ToolbarButtonViewController.m */; };
-		54C0D91219E62EBD00C47963 /* ToolbarButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91019E62EBD00C47963 /* ToolbarButtonViewController.xib */; };
-		54C0D91919E646EF00C47963 /* ToolbarButtonCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C0D91719E646EF00C47963 /* ToolbarButtonCollectionCell.m */; };
-		54C0D91A19E646EF00C47963 /* ToolbarButtonCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91819E646EF00C47963 /* ToolbarButtonCollectionCell.xib */; };
+		540333A519ED2CF200BB233F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5403339319ED2CF200BB233F /* BaseViewController.m */; };
+		540333A619ED2CF200BB233F /* BaseViewResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5403339519ED2CF200BB233F /* BaseViewResource.m */; };
+		540333A719ED2CF200BB233F /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5403339719ED2CF200BB233F /* ContactViewController.m */; };
+		540333A819ED2CF200BB233F /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5403339819ED2CF200BB233F /* ContactViewController.xib */; };
+		540333A919ED2CF200BB233F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5403339A19ED2CF200BB233F /* MenuViewController.m */; };
+		540333AA19ED2CF200BB233F /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5403339B19ED2CF200BB233F /* MenuViewController.xib */; };
+		540333AB19ED2CF200BB233F /* ToolbarButtonCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5403339D19ED2CF200BB233F /* ToolbarButtonCollectionCell.m */; };
+		540333AC19ED2CF200BB233F /* ToolbarButtonCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5403339E19ED2CF200BB233F /* ToolbarButtonCollectionCell.xib */; };
+		540333AD19ED2CF200BB233F /* ToolbarButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 540333A019ED2CF200BB233F /* ToolbarButtonViewController.m */; };
+		540333AE19ED2CF200BB233F /* ToolbarButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 540333A119ED2CF200BB233F /* ToolbarButtonViewController.xib */; };
+		540333AF19ED2CF200BB233F /* ToolbarImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 540333A319ED2CF200BB233F /* ToolbarImageViewController.m */; };
+		540333B019ED2CF200BB233F /* ToolbarImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 540333A419ED2CF200BB233F /* ToolbarImageViewController.xib */; };
 		54C0D92119E6773F00C47963 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91B19E6773F00C47963 /* new.png */; };
 		54C0D92219E6773F00C47963 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91C19E6773F00C47963 /* save.png */; };
 		54C0D92319E6773F00C47963 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91D19E6773F00C47963 /* search.png */; };
 		54C0D92419E6773F00C47963 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91E19E6773F00C47963 /* settings.png */; };
 		54C0D92519E6773F00C47963 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D91F19E6773F00C47963 /* user.png */; };
 		54C0D92619E6773F00C47963 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D92019E6773F00C47963 /* world.png */; };
-		54C0D92A19E67EBA00C47963 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C0D92819E67EBA00C47963 /* MenuViewController.m */; };
-		54C0D92B19E67EBA00C47963 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C0D92919E67EBA00C47963 /* MenuViewController.xib */; };
 		54DACCF119DD470900F2250A /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54DACCF019DD470900F2250A /* test.jpg */; };
 		54F4519119DBD5FD00B46374 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4519019DBD5FD00B46374 /* main.m */; };
 		54F4519419DBD5FD00B46374 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4519319DBD5FD00B46374 /* AppDelegate.m */; };
@@ -31,7 +32,6 @@
 		54F4519F19DBD5FD00B46374 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F4519E19DBD5FD00B46374 /* Images.xcassets */; };
 		54F451A219DBD5FD00B46374 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F451A019DBD5FD00B46374 /* LaunchScreen.xib */; };
 		54F451AE19DBD5FD00B46374 /* DefaultProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F451AD19DBD5FD00B46374 /* DefaultProjectTests.m */; };
-		54F451BE19DBD8CD00B46374 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F451BD19DBD8CD00B46374 /* BaseViewController.m */; };
 		54F451C419DBDC6000B46374 /* DefineFlags.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F451C319DBDC6000B46374 /* DefineFlags.m */; };
 		54F451C719DBDD3900B46374 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F451C619DBDD3900B46374 /* MainViewController.m */; };
 		6B97A74A19E2F308004B5348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B97A74819E2F308004B5348 /* Main.storyboard */; };
@@ -48,29 +48,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5418B2CB19E5266A00BC7578 /* ToolbarImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarImageViewController.h; sourceTree = "<group>"; };
-		5418B2CC19E5266A00BC7578 /* ToolbarImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarImageViewController.m; sourceTree = "<group>"; };
-		5418B2CD19E5266A00BC7578 /* ToolbarImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarImageViewController.xib; sourceTree = "<group>"; };
-		54254D7719E689780093EA74 /* BaseViewResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewResource.h; sourceTree = "<group>"; };
-		54254D7819E689780093EA74 /* BaseViewResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewResource.m; sourceTree = "<group>"; };
-		5472041919E5020D007ACDE5 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
-		5472041A19E5020D007ACDE5 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
-		5472041B19E5020D007ACDE5 /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
-		54C0D90E19E62EBD00C47963 /* ToolbarButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarButtonViewController.h; sourceTree = "<group>"; };
-		54C0D90F19E62EBD00C47963 /* ToolbarButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarButtonViewController.m; sourceTree = "<group>"; };
-		54C0D91019E62EBD00C47963 /* ToolbarButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarButtonViewController.xib; sourceTree = "<group>"; };
-		54C0D91619E646EF00C47963 /* ToolbarButtonCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarButtonCollectionCell.h; sourceTree = "<group>"; };
-		54C0D91719E646EF00C47963 /* ToolbarButtonCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarButtonCollectionCell.m; sourceTree = "<group>"; };
-		54C0D91819E646EF00C47963 /* ToolbarButtonCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarButtonCollectionCell.xib; sourceTree = "<group>"; };
+		5403339219ED2CF200BB233F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5403339319ED2CF200BB233F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		5403339419ED2CF200BB233F /* BaseViewResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewResource.h; sourceTree = "<group>"; };
+		5403339519ED2CF200BB233F /* BaseViewResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewResource.m; sourceTree = "<group>"; };
+		5403339619ED2CF200BB233F /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		5403339719ED2CF200BB233F /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		5403339819ED2CF200BB233F /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
+		5403339919ED2CF200BB233F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		5403339A19ED2CF200BB233F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		5403339B19ED2CF200BB233F /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		5403339C19ED2CF200BB233F /* ToolbarButtonCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarButtonCollectionCell.h; sourceTree = "<group>"; };
+		5403339D19ED2CF200BB233F /* ToolbarButtonCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarButtonCollectionCell.m; sourceTree = "<group>"; };
+		5403339E19ED2CF200BB233F /* ToolbarButtonCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarButtonCollectionCell.xib; sourceTree = "<group>"; };
+		5403339F19ED2CF200BB233F /* ToolbarButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarButtonViewController.h; sourceTree = "<group>"; };
+		540333A019ED2CF200BB233F /* ToolbarButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarButtonViewController.m; sourceTree = "<group>"; };
+		540333A119ED2CF200BB233F /* ToolbarButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarButtonViewController.xib; sourceTree = "<group>"; };
+		540333A219ED2CF200BB233F /* ToolbarImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarImageViewController.h; sourceTree = "<group>"; };
+		540333A319ED2CF200BB233F /* ToolbarImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarImageViewController.m; sourceTree = "<group>"; };
+		540333A419ED2CF200BB233F /* ToolbarImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolbarImageViewController.xib; sourceTree = "<group>"; };
 		54C0D91B19E6773F00C47963 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
 		54C0D91C19E6773F00C47963 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		54C0D91D19E6773F00C47963 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		54C0D91E19E6773F00C47963 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		54C0D91F19E6773F00C47963 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		54C0D92019E6773F00C47963 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
-		54C0D92719E67EBA00C47963 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		54C0D92819E67EBA00C47963 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		54C0D92919E67EBA00C47963 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		54DACCF019DD470900F2250A /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		54F4518B19DBD5FD00B46374 /* DefaultProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefaultProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F4518F19DBD5FD00B46374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,8 +85,6 @@
 		54F451A719DBD5FD00B46374 /* DefaultProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DefaultProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F451AC19DBD5FD00B46374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54F451AD19DBD5FD00B46374 /* DefaultProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultProjectTests.m; sourceTree = "<group>"; };
-		54F451BC19DBD8CD00B46374 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		54F451BD19DBD8CD00B46374 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		54F451C219DBDC6000B46374 /* DefineFlags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineFlags.h; sourceTree = "<group>"; };
 		54F451C319DBDC6000B46374 /* DefineFlags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefineFlags.m; sourceTree = "<group>"; };
 		54F451C519DBDD3900B46374 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -110,35 +110,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		54254D7319E687F90093EA74 /* BaseViewResourceSingleton */ = {
+		5403339119ED2CF200BB233F /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
-				54254D7719E689780093EA74 /* BaseViewResource.h */,
-				54254D7819E689780093EA74 /* BaseViewResource.m */,
+				5403339219ED2CF200BB233F /* BaseViewController.h */,
+				5403339319ED2CF200BB233F /* BaseViewController.m */,
+				5403339419ED2CF200BB233F /* BaseViewResource.h */,
+				5403339519ED2CF200BB233F /* BaseViewResource.m */,
+				5403339619ED2CF200BB233F /* ContactViewController.h */,
+				5403339719ED2CF200BB233F /* ContactViewController.m */,
+				5403339819ED2CF200BB233F /* ContactViewController.xib */,
+				5403339919ED2CF200BB233F /* MenuViewController.h */,
+				5403339A19ED2CF200BB233F /* MenuViewController.m */,
+				5403339B19ED2CF200BB233F /* MenuViewController.xib */,
+				5403339C19ED2CF200BB233F /* ToolbarButtonCollectionCell.h */,
+				5403339D19ED2CF200BB233F /* ToolbarButtonCollectionCell.m */,
+				5403339E19ED2CF200BB233F /* ToolbarButtonCollectionCell.xib */,
+				5403339F19ED2CF200BB233F /* ToolbarButtonViewController.h */,
+				540333A019ED2CF200BB233F /* ToolbarButtonViewController.m */,
+				540333A119ED2CF200BB233F /* ToolbarButtonViewController.xib */,
+				540333A219ED2CF200BB233F /* ToolbarImageViewController.h */,
+				540333A319ED2CF200BB233F /* ToolbarImageViewController.m */,
+				540333A419ED2CF200BB233F /* ToolbarImageViewController.xib */,
 			);
-			path = BaseViewResourceSingleton;
-			sourceTree = "<group>";
-		};
-		5472041819E501F8007ACDE5 /* DefaultBaseViewGUI */ = {
-			isa = PBXGroup;
-			children = (
-				5472041919E5020D007ACDE5 /* ContactViewController.h */,
-				5472041A19E5020D007ACDE5 /* ContactViewController.m */,
-				5472041B19E5020D007ACDE5 /* ContactViewController.xib */,
-				5418B2CB19E5266A00BC7578 /* ToolbarImageViewController.h */,
-				5418B2CC19E5266A00BC7578 /* ToolbarImageViewController.m */,
-				5418B2CD19E5266A00BC7578 /* ToolbarImageViewController.xib */,
-				54C0D90E19E62EBD00C47963 /* ToolbarButtonViewController.h */,
-				54C0D90F19E62EBD00C47963 /* ToolbarButtonViewController.m */,
-				54C0D91019E62EBD00C47963 /* ToolbarButtonViewController.xib */,
-				54C0D91619E646EF00C47963 /* ToolbarButtonCollectionCell.h */,
-				54C0D91719E646EF00C47963 /* ToolbarButtonCollectionCell.m */,
-				54C0D91819E646EF00C47963 /* ToolbarButtonCollectionCell.xib */,
-				54C0D92719E67EBA00C47963 /* MenuViewController.h */,
-				54C0D92819E67EBA00C47963 /* MenuViewController.m */,
-				54C0D92919E67EBA00C47963 /* MenuViewController.xib */,
-			);
-			path = DefaultBaseViewGUI;
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		54DACCEF19DD470900F2250A /* Resources */ = {
@@ -182,12 +177,8 @@
 		54F4518D19DBD5FD00B46374 /* DefaultProject */ = {
 			isa = PBXGroup;
 			children = (
-				54254D7319E687F90093EA74 /* BaseViewResourceSingleton */,
-				5472041819E501F8007ACDE5 /* DefaultBaseViewGUI */,
 				54F4519219DBD5FD00B46374 /* AppDelegate.h */,
 				54F4519319DBD5FD00B46374 /* AppDelegate.m */,
-				54F451BC19DBD8CD00B46374 /* BaseViewController.h */,
-				54F451BD19DBD8CD00B46374 /* BaseViewController.m */,
 				54F4519E19DBD5FD00B46374 /* Images.xcassets */,
 				54F451A019DBD5FD00B46374 /* LaunchScreen.xib */,
 				54F4519519DBD5FD00B46374 /* DefaultProject.xcdatamodeld */,
@@ -225,6 +216,7 @@
 		54F451B719DBD7CE00B46374 /* 3rdLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				5403339119ED2CF200BB233F /* BaseViewController */,
 			);
 			path = 3rdLibrary;
 			sourceTree = "<group>";
@@ -368,15 +360,15 @@
 			files = (
 				54C0D92419E6773F00C47963 /* settings.png in Resources */,
 				54F451A219DBD5FD00B46374 /* LaunchScreen.xib in Resources */,
-				5472041D19E5020D007ACDE5 /* ContactViewController.xib in Resources */,
-				54C0D91219E62EBD00C47963 /* ToolbarButtonViewController.xib in Resources */,
+				540333AE19ED2CF200BB233F /* ToolbarButtonViewController.xib in Resources */,
+				540333A819ED2CF200BB233F /* ContactViewController.xib in Resources */,
 				54C0D92119E6773F00C47963 /* new.png in Resources */,
-				54C0D91A19E646EF00C47963 /* ToolbarButtonCollectionCell.xib in Resources */,
-				5418B2CF19E5266A00BC7578 /* ToolbarImageViewController.xib in Resources */,
-				54C0D92B19E67EBA00C47963 /* MenuViewController.xib in Resources */,
+				540333AC19ED2CF200BB233F /* ToolbarButtonCollectionCell.xib in Resources */,
 				54C0D92219E6773F00C47963 /* save.png in Resources */,
 				54C0D92619E6773F00C47963 /* world.png in Resources */,
+				540333B019ED2CF200BB233F /* ToolbarImageViewController.xib in Resources */,
 				54C0D92319E6773F00C47963 /* search.png in Resources */,
+				540333AA19ED2CF200BB233F /* MenuViewController.xib in Resources */,
 				54F4519F19DBD5FD00B46374 /* Images.xcassets in Resources */,
 				54DACCF119DD470900F2250A /* test.jpg in Resources */,
 				54C0D92519E6773F00C47963 /* user.png in Resources */,
@@ -398,18 +390,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5472041C19E5020D007ACDE5 /* ContactViewController.m in Sources */,
+				540333AF19ED2CF200BB233F /* ToolbarImageViewController.m in Sources */,
 				54F4519719DBD5FD00B46374 /* DefaultProject.xcdatamodeld in Sources */,
-				54C0D91919E646EF00C47963 /* ToolbarButtonCollectionCell.m in Sources */,
+				540333A919ED2CF200BB233F /* MenuViewController.m in Sources */,
+				540333A519ED2CF200BB233F /* BaseViewController.m in Sources */,
 				54F451C719DBDD3900B46374 /* MainViewController.m in Sources */,
-				54254D7919E689780093EA74 /* BaseViewResource.m in Sources */,
-				54F451BE19DBD8CD00B46374 /* BaseViewController.m in Sources */,
-				5418B2CE19E5266A00BC7578 /* ToolbarImageViewController.m in Sources */,
 				54F4519419DBD5FD00B46374 /* AppDelegate.m in Sources */,
+				540333AB19ED2CF200BB233F /* ToolbarButtonCollectionCell.m in Sources */,
 				54F451C419DBDC6000B46374 /* DefineFlags.m in Sources */,
-				54C0D91119E62EBD00C47963 /* ToolbarButtonViewController.m in Sources */,
-				54C0D92A19E67EBA00C47963 /* MenuViewController.m in Sources */,
+				540333AD19ED2CF200BB233F /* ToolbarButtonViewController.m in Sources */,
+				540333A719ED2CF200BB233F /* ContactViewController.m in Sources */,
 				54F4519119DBD5FD00B46374 /* main.m in Sources */,
+				540333A619ED2CF200BB233F /* BaseViewResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
