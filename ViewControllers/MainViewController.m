@@ -144,7 +144,7 @@
 -(UITableViewCell *)slideMenuItemAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MenuCellItem"];
     [cell setBackgroundColor:[UIColor clearColor]];
-    [cell.textLabel setText:[NSString stringWithFormat:@"Cell Index: %ld",(long)indexPath.row]];
+    [cell.textLabel setText:[NSString stringWithFormat:@"Delegate cell index: %ld",(long)indexPath.row]];
     
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     

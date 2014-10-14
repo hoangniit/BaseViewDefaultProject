@@ -179,9 +179,9 @@
             _topButtonSearch = [UIButton buttonWithType:UIButtonTypeCustom];
             _topButtonSearch.frame = CGRectMake(_topSearchField.frame.size.width + 4, 7 + topMenuYPlus, 30, 30);
             _topButtonSearch.layer.borderColor = [UIColor darkGrayColor].CGColor;
-//            _topButtonSearch.layer.borderWidth = 1.0;
-//            _topButtonSearch.backgroundColor = [UIColor clearColor];
-//            _topButtonSearch.layer.cornerRadius = 3.0;
+            //            _topButtonSearch.layer.borderWidth = 1.0;
+            //            _topButtonSearch.backgroundColor = [UIColor clearColor];
+            //            _topButtonSearch.layer.cornerRadius = 3.0;
             [_topButtonSearch addTarget:self action:@selector(topMenuWillSearch) forControlEvents:UIControlEventTouchUpInside];
             
             [_topPanel addSubview:_topSearchField];
@@ -501,14 +501,14 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (!_slideMenuDelegate) {
-//        NSLog(@"Not delegate");
+        //        NSLog(@"Not delegate");
         return 0;
     }else{
         @try {
             return [_slideMenuDelegate slideMenuNumberOfSectionsInMenu];
         }
         @catch (NSException *exception) {
-//            NSLog(@"Not delegate");
+            //            NSLog(@"Not delegate");
             return 0;
         }
     }
@@ -516,14 +516,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (!_slideMenuDelegate) {
-//        NSLog(@"Not delegate");
+        //        NSLog(@"Not delegate");
         return 0;
     }else{
         @try {
             return [_slideMenuDelegate slideMenuNumberOfItemsInMenuSection:section];
         }
         @catch (NSException *exception) {
-//            NSLog(@"Not delegate");
+            //            NSLog(@"Not delegate");
             return 0;
         }
     }
@@ -531,14 +531,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!_slideMenuDelegate) {
-//        NSLog(@"Not delegate");
+        //        NSLog(@"Not delegate");
         return nil;
     }else{
         @try {
             return [_slideMenuDelegate slideMenuItemAtIndexPath:indexPath];
         }
         @catch (NSException *exception) {
-//            NSLog(@"Not delegate");
+            //            NSLog(@"Not delegate");
             return nil;
         }
     }
@@ -559,14 +559,14 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!_slideMenuDelegate) {
-//        NSLog(@"Not delegate");
+        //        NSLog(@"Not delegate");
         return 44;
     }else{
         @try {
             return [_slideMenuDelegate slideMenuHeightForRowAtIndexPath:indexPath];
         }
         @catch (NSException *exception) {
-//            NSLog(@"Not delegate");
+            //            NSLog(@"Not delegate");
             return 44;
         }
     }
@@ -579,14 +579,14 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (_isShowMenuItemSection == YES) {
         if (!_slideMenuDelegate) {
-//            NSLog(@"Not delegate");
+            //            NSLog(@"Not delegate");
             return 30;
         }else{
             @try {
                 return [_slideMenuDelegate slideMenuHeightForHeaderInSection:section];
             }
             @catch (NSException *exception) {
-//                NSLog(@"Not delegate");
+                //                NSLog(@"Not delegate");
                 return 30;
             }
         }
@@ -599,7 +599,7 @@
 {
     if (_isShowMenuItemSection == YES) {
         if (!_slideMenuDelegate) {
-//            NSLog(@"Not delegate");
+            //            NSLog(@"Not delegate");
             UILabel *label = [[UILabel alloc] init];
             label.backgroundColor = [UIColor whiteColor];
             label.font = [label.font fontWithSize:15];
@@ -613,7 +613,7 @@
                 return viewHeader;
             }
             @catch (NSException *exception) {
-//                NSLog(@"Not delegate");
+                //                NSLog(@"Not delegate");
                 UILabel *label = [[UILabel alloc] init];
                 label.backgroundColor = [UIColor whiteColor];
                 label.font = [label.font fontWithSize:15];
