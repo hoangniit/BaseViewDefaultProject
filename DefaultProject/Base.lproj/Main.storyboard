@@ -34,7 +34,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" id="und-xK-aHF">
                                 <rect key="frame" x="37" y="193" width="247" height="181"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gso-la-VRh">
                                         <rect key="frame" x="100" y="8" width="46" height="30"/>

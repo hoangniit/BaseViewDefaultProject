@@ -26,6 +26,9 @@
 -(NSInteger)slideMenuNumberOfItemsInMenuSection:(NSInteger)section;
 -(UITableViewCell *)slideMenuItemAtIndexPath:(NSIndexPath *)indexPath;
 -(void)slideMenuDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+-(CGFloat)slideMenuHeightForRowAtIndexPath:(NSIndexPath *)indexPath;
+-(CGFloat)slideMenuHeightForHeaderInSection:(NSInteger)section;
+-(UIView *)slideMenuViewForHeaderInSection:(NSInteger)section;
 
 @end
 
@@ -71,6 +74,7 @@
 #define panelHei 44.0
 
 #pragma mark - top panel
+
 typedef enum{
     topMenuTypeDefault = 0,
     topMenuTypeImage = 1,
@@ -147,6 +151,7 @@ typedef enum{
 
 #pragma mark - menu panel
 @property (strong,nonatomic) IBOutlet UITableView *tableMenuItem;
+@property (nonatomic) BOOL isShowMenuItemSection;
 
 typedef enum{
     slideMenuTypeDefault = 0,
@@ -161,5 +166,9 @@ typedef enum{
 }SlideMenuCellType;
 
 @property (nonatomic) SlideMenuCellType slideMenuCellType;
+
+-(void)setMainMenuShowItemSection:(BOOL)isShow;
+-(void)setMainMenuBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode)contentMode;
+-(void)setMainMenuBackgroundColor:(UIColor *)color;
 
 @end

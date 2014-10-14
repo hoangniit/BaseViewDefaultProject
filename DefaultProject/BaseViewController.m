@@ -533,6 +533,21 @@
     }
 }
 
+-(void)setTopNavigationBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode{
+    [_topMainBackgroundImg removeFromSuperview];
+    if (_topMainBackgroundImg == nil) {
+        _topMainBackgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _topPanelBar.frame.size.width, _topPanelBar.frame.size.height)];
+    }
+    [_topMainBackgroundImg setImage:image];
+    [_topMainBackgroundImg setContentMode:contentMode];
+    [_topPanelBar addSubview:_topMainBackgroundImg];
+    [_topPanelBar sendSubviewToBack:_topMainBackgroundImg];
+}
+
+-(void)setTopNavigationBackgroundColor:(UIColor *)color{
+    [_topPanelBar setBackgroundColor:color];
+}
+
 #pragma mark - setup toolbar
 -(void)removeToolbarChildControls{
     [_bottomToolbar removeFromSuperview];
@@ -725,6 +740,88 @@
     _slideMenu.view.layer.borderColor = [UIColor darkGrayColor].CGColor;
     _slideMenu.view.layer.borderWidth =  1.0;
     [self.view addSubview:_slideMenu.view];
+    
+    _slideMenu.view.frame = CGRectMake(0, 0, 0, self.view.frame.size.height);
+    [_slideMenu setTopMenuType:topMenuTypeSearch];
+    [_slideMenu menuTop_setImage:[UIImage imageNamed:@"save.png"]];
+    [_slideMenu menuTop_setTitle:@"Buông thần"];
+    [_slideMenu menuTop_SetTitleFontColor:[UIColor blueColor]];
+    [_slideMenu menuTop_setDescription:@"Bán thánh"];
+    [_slideMenu menuTop_setSearchButtonImage:[UIImage imageNamed:@"search.png"]];
+    
+    _slideMenu.slideMenuDelegate = self;
+}
+
+-(void)enableShowSlideMenu:(BOOL)enable{
+    _isShowSlideMenu = enable;
+}
+
+-(void)showSlideMenuWithAnimation:(BOOL)ani{
+    if (_slideMenu.view.frame.size.width == 0) {
+        if (ani == YES) {
+            _slideMenu.view.frame = CGRectMake(0, 0, 0, self.view.frame.size.height);
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                _slideMenu.view.frame = CGRectMake(0, 0, menuWid, self.view.frame.size.height);
+                for (UIView *childView in [self.view subviews]) {
+                    if (childView != _slideMenu.view) {
+                        childView.frame = CGRectMake(childView.frame.origin.x + _slideMenu.view.frame.size.width, childView.frame.origin.y, childView.frame.size.width, childView.frame.size.height);
+                    }
+                }
+            }];
+        }else{
+            _slideMenu.view.frame = CGRectMake(0, 0, menuWid, self.view.frame.size.height);
+            for (UIView *childView in [self.view subviews]) {
+                if (childView != _slideMenu.view) {
+                    childView.frame = CGRectMake(childView.frame.origin.x + _slideMenu.view.frame.size.width, childView.frame.origin.y, childView.frame.size.width, childView.frame.size.height);
+                }
+            }
+        }
+    }
+}
+
+-(void)hideSlideMenuWithAnimation:(BOOL)ani{
+    if (_slideMenu.view.frame.size.width > 0) {
+        if (ani == YES) {
+            _slideMenu.view.frame = CGRectMake(0, 0, menuWid, self.view.frame.size.height);
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                _slideMenu.view.frame = CGRectMake(0, 0, 0, self.view.frame.size.height);
+                for (UIView *childView in [self.view subviews]) {
+                    if (childView != _slideMenu.view) {
+                        childView.frame = CGRectMake(childView.frame.origin.x - menuWid, childView.frame.origin.y, childView.frame.size.width, childView.frame.size.height);
+                    }
+                }
+            }];
+        }else{
+            _slideMenu.view.frame = CGRectMake(0, 0, 0, self.view.frame.size.height);
+            for (UIView *childView in [self.view subviews]) {
+                if (childView != _slideMenu.view) {
+                    childView.frame = CGRectMake(childView.frame.origin.x - menuWid, childView.frame.origin.y, childView.frame.size.width, childView.frame.size.height);
+                }
+            }
+        }
+    }
+}
+
+-(void)createGesture{
+    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureShowMenu)];
+    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    rightRecognizer.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:rightRecognizer];
+    
+    UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHideMenu)];
+    leftRecognizer.direction=UISwipeGestureRecognizerDirectionLeft;
+    leftRecognizer.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:leftRecognizer];
+}
+
+-(void)gestureShowMenu{
+    [self showSlideMenuWithAnimation:YES];
+}
+
+-(void)gestureHideMenu{
+    [self hideSlideMenuWithAnimation:YES];
 }
 
 #pragma mark - view setup
@@ -735,7 +832,7 @@
     [self createMainProcessView];
     [self createTopNavigationBarControls];
     [self createToolbar];
-    
+    [self createGesture];
     //for test only
     _topPanelBar.backgroundColor = [UIColor lightGrayColor];
 //    [_btNavMenu setBackgroundColor:[UIColor greenColor]];
@@ -759,15 +856,7 @@
 //    
     [_bottomToolbar setBackgroundColor:[UIColor lightGrayColor]];
     //end test
-    
     [self createSlideMenu];
-    _slideMenu.view.frame = CGRectMake(0, 64, menuWid, self.view.frame.size.height - 108);
-    [_slideMenu setTopMenuType:topMenuTypeSearch];
-    [_slideMenu menuTop_setImage:[UIImage imageNamed:@"save.png"]];
-    [_slideMenu menuTop_setTitle:@"Buông thần"];
-    [_slideMenu menuTop_SetTitleFontColor:[UIColor blueColor]];
-    [_slideMenu menuTop_setDescription:@"Bán thánh"];
-    [_slideMenu menuTop_setSearchButtonImage:[UIImage imageNamed:@"search.png"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -779,7 +868,14 @@
 #pragma mark navigation bar
 -(void)tapNavBackButton{ [self.navigationController popViewControllerAnimated:YES]; }
 
--(void)tapNavMenuButton{ NSLog(@"Tap menu"); }
+-(void)tapNavMenuButton{
+    NSLog(@"Tap menu");
+    if (_slideMenu.view.frame.size.width > 0) {
+        [self hideSlideMenuWithAnimation:YES];
+    }else{
+        [self showSlideMenuWithAnimation:YES];
+    }
+}
 
 -(void)tapNavButton1{ NSLog(@"Tap nav 1 button"); }
 

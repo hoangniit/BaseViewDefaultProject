@@ -55,9 +55,16 @@
 
 #pragma mark - top panel
 
+#define ios7StatusBarHeight 20.0
+
 -(void)showMenuTopPanel:(BOOL)isShowTop{
     _isShowTopMenu = isShowTop;
     _topPanel.hidden = !_isShowTopMenu;
+    if (is_IOS7_or_Later) {
+        _topPanel.frame = CGRectMake(0, 0, menuWid, panelHei + ios7StatusBarHeight);
+    }else{
+        _topPanel.frame = CGRectMake(0, 0, menuWid, panelHei);
+    }
     [self reloadFrameOfTable];
 }
 
@@ -76,18 +83,22 @@
             [childView removeFromSuperview];
         }
     }
+    float topMenuYPlus = 0;
+    if (is_IOS7_or_Later) {
+        topMenuYPlus = 20;
+    }
     
     switch (topType) {
         case topMenuTypeImage:
         {
             _topMenuImage = [[UIImageView alloc] init];
-            _topMenuImage.frame = CGRectMake(2, 2, menuWid - 4, 40);
+            _topMenuImage.frame = CGRectMake(2, 2 + topMenuYPlus, menuWid - 4, 40);
             _topMenuImage.layer.borderWidth = 1.0;
             _topMenuImage.layer.borderColor = [UIColor darkGrayColor].CGColor;
             _topMenuImage.layer.cornerRadius = 2.0;
             
             _topMenuImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            _topMenuImageButton.frame = CGRectMake(2, 2, menuWid - 4, 40);
+            _topMenuImageButton.frame = CGRectMake(2, 2 + topMenuYPlus, menuWid - 4, 40);
             _topMenuImageButton.backgroundColor = [UIColor clearColor];
             [_topMenuImageButton addTarget:self action:@selector(tapTopImage:) forControlEvents:UIControlEventTouchUpInside];
             
@@ -99,17 +110,17 @@
         case topMenuTypeImageTitle:
         {
             _topMenuImage = [[UIImageView alloc] init];
-            _topMenuImage.frame = CGRectMake(2, 2, 40, 40);
+            _topMenuImage.frame = CGRectMake(2, 2 + topMenuYPlus, 40, 40);
             _topMenuImage.layer.borderColor = [UIColor darkGrayColor].CGColor;
             _topMenuImage.layer.cornerRadius = 2.0;
             
             _topMenuImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            _topMenuImageButton.frame = CGRectMake(2, 2, 40, 40);
+            _topMenuImageButton.frame = CGRectMake(2, 2 + topMenuYPlus, 40, 40);
             _topMenuImageButton.backgroundColor = [UIColor clearColor];
             [_topMenuImageButton addTarget:self action:@selector(tapTopImage:) forControlEvents:UIControlEventTouchUpInside];
             
             _topMenuTitle = [UIButton buttonWithType:UIButtonTypeCustom];
-            _topMenuTitle.frame = CGRectMake(44, 2, menuWid - 4 - 2 - 40, 40);
+            _topMenuTitle.frame = CGRectMake(44, 2 + topMenuYPlus, menuWid - 4 - 2 - 40, 40);
             _topMenuTitle.backgroundColor = [UIColor clearColor];
             _topMenuTitle.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             [_topMenuTitle addTarget:self action:@selector(tapTopTitle:) forControlEvents:UIControlEventTouchUpInside];
@@ -124,23 +135,23 @@
         case topMenuTypeImageTitleDesciption:
         {
             _topMenuImage = [[UIImageView alloc] init];
-            _topMenuImage.frame = CGRectMake(2, 2, 40, 40);
+            _topMenuImage.frame = CGRectMake(2, 2 + topMenuYPlus, 40, 40);
             _topMenuImage.layer.borderColor = [UIColor darkGrayColor].CGColor;
             _topMenuImage.layer.cornerRadius = 2.0;
             
             _topMenuImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            _topMenuImageButton.frame = CGRectMake(2, 2, 40, 40);
+            _topMenuImageButton.frame = CGRectMake(2, 2 + topMenuYPlus, 40, 40);
             _topMenuImageButton.backgroundColor = [UIColor clearColor];
             [_topMenuImageButton addTarget:self action:@selector(tapTopImage:) forControlEvents:UIControlEventTouchUpInside];
             
             _topMenuTitle = [UIButton buttonWithType:UIButtonTypeCustom];
-            _topMenuTitle.frame = CGRectMake(44, 2, menuWid - 4 - 2 - 40, 20);
+            _topMenuTitle.frame = CGRectMake(44, 2 + topMenuYPlus, menuWid - 4 - 2 - 40, 20);
             _topMenuTitle.backgroundColor = [UIColor clearColor];
             _topMenuTitle.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             [_topMenuTitle addTarget:self action:@selector(tapTopTitle:) forControlEvents:UIControlEventTouchUpInside];
             
             _topMenuDescription = [UIButton buttonWithType:UIButtonTypeCustom];
-            _topMenuDescription.frame = CGRectMake(44, 22, menuWid - 4 - 2 - 40, 20);
+            _topMenuDescription.frame = CGRectMake(44, 22 + topMenuYPlus, menuWid - 4 - 2 - 40, 20);
             _topMenuDescription.backgroundColor = [UIColor clearColor];
             _topMenuDescription.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             [_topMenuDescription addTarget:self action:@selector(tapTopDescription:) forControlEvents:UIControlEventTouchUpInside];
@@ -157,7 +168,7 @@
         case topMenuTypeSearch:
         {
             _topSearchField = [[UITextField alloc] init];
-            _topSearchField.frame = CGRectMake(2, 7, menuWid - 2 - 4 - 30, 30);
+            _topSearchField.frame = CGRectMake(2, 7 + topMenuYPlus, menuWid - 2 - 4 - 30, 30);
             _topSearchField.layer.borderWidth = 1.0;
             _topSearchField.layer.borderColor = [UIColor darkGrayColor].CGColor;
             _topSearchField.backgroundColor = [UIColor whiteColor];
@@ -166,7 +177,7 @@
             [_topSearchField setPlaceholder:@" Enter text search "];
             
             _topButtonSearch = [UIButton buttonWithType:UIButtonTypeCustom];
-            _topButtonSearch.frame = CGRectMake(_topSearchField.frame.size.width + 4, 7, 30, 30);
+            _topButtonSearch.frame = CGRectMake(_topSearchField.frame.size.width + 4, 7 + topMenuYPlus, 30, 30);
             _topButtonSearch.layer.borderColor = [UIColor darkGrayColor].CGColor;
             _topButtonSearch.layer.borderWidth = 1.0;
             _topButtonSearch.backgroundColor = [UIColor clearColor];
@@ -321,6 +332,7 @@
                 [bottomButton addSubview:bottomButton.buttonMain];
                 
                 bottomButton.tag = i;
+                
                 [_bottomPanel addSubview:bottomButton];
             }
         }
@@ -471,13 +483,17 @@
     float hei = self.view.frame.size.height;
     //setup bottom menu
     if (_isShowBottomMenu == YES) {
-        y = 44;
+        y = _topPanel.frame.size.height;
         hei = hei - 44;
     }
     
     //setup top menu
+    float heiUnplus = 0;
+    if (is_IOS7_or_Later) {
+        heiUnplus = 20.0;
+    }
     if (_isShowTopMenu == YES) {
-        hei = hei - 44;
+        hei = hei - 44 - heiUnplus;
     }
     
     _tableMenuItem.frame = CGRectMake(x, y, wid, hei);
@@ -485,14 +501,14 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (!_slideMenuDelegate) {
-        NSLog(@"Not delegate");
+//        NSLog(@"Not delegate");
         return 0;
     }else{
         @try {
             return [_slideMenuDelegate slideMenuNumberOfSectionsInMenu];
         }
         @catch (NSException *exception) {
-            NSLog(@"Not delegate");
+//            NSLog(@"Not delegate");
             return 0;
         }
     }
@@ -500,14 +516,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (!_slideMenuDelegate) {
-        NSLog(@"Not delegate");
+//        NSLog(@"Not delegate");
         return 0;
     }else{
         @try {
             return [_slideMenuDelegate slideMenuNumberOfItemsInMenuSection:section];
         }
         @catch (NSException *exception) {
-            NSLog(@"Not delegate");
+//            NSLog(@"Not delegate");
             return 0;
         }
     }
@@ -515,14 +531,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!_slideMenuDelegate) {
-        NSLog(@"Not delegate");
+//        NSLog(@"Not delegate");
         return nil;
     }else{
         @try {
             return [_slideMenuDelegate slideMenuItemAtIndexPath:indexPath];
         }
         @catch (NSException *exception) {
-            NSLog(@"Not delegate");
+//            NSLog(@"Not delegate");
             return nil;
         }
     }
@@ -530,15 +546,102 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!_slideMenuDelegate) {
-        NSLog(@"Not delegate, tap item at index: %@", [NSString stringWithFormat:@"%ld",(long)indexPath.row]);
+        NSLog(@"Not delegate, tap item at index: %@ of section %@", [NSString stringWithFormat:@"%ld",(long)indexPath.row],[NSString stringWithFormat:@"%ld",(long)indexPath.section]);
     }else{
         @try {
             return [_slideMenuDelegate slideMenuDidSelectItemAtIndexPath:indexPath];
         }
         @catch (NSException *exception) {
-            NSLog(@"Not delegate, tap item at index: %@", [NSString stringWithFormat:@"%ld",(long)indexPath.row]);
+            NSLog(@"Not delegate, tap item at index: %@ of section %@", [NSString stringWithFormat:@"%ld",(long)indexPath.row],[NSString stringWithFormat:@"%ld",(long)indexPath.section]);
         }
     }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!_slideMenuDelegate) {
+//        NSLog(@"Not delegate");
+        return 44;
+    }else{
+        @try {
+            return [_slideMenuDelegate slideMenuHeightForRowAtIndexPath:indexPath];
+        }
+        @catch (NSException *exception) {
+//            NSLog(@"Not delegate");
+            return 44;
+        }
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.0001f;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (_isShowMenuItemSection == YES) {
+        if (!_slideMenuDelegate) {
+//            NSLog(@"Not delegate");
+            return 30;
+        }else{
+            @try {
+                return [_slideMenuDelegate slideMenuHeightForHeaderInSection:section];
+            }
+            @catch (NSException *exception) {
+//                NSLog(@"Not delegate");
+                return 30;
+            }
+        }
+    }else{
+        return 0.0001f;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (_isShowMenuItemSection == YES) {
+        if (!_slideMenuDelegate) {
+//            NSLog(@"Not delegate");
+            UILabel *label = [[UILabel alloc] init];
+            label.backgroundColor = [UIColor whiteColor];
+            label.font = [label.font fontWithSize:15];
+            label.text = [NSString stringWithFormat:@"Section : %ld",(long)section];
+            label.textAlignment = NSTextAlignmentLeft;
+            return label;
+        }else{
+            @try {
+                UIView *viewHeader = [_slideMenuDelegate slideMenuViewForHeaderInSection:section];
+                _tableMenuItem.tableHeaderView = viewHeader;
+                return viewHeader;
+            }
+            @catch (NSException *exception) {
+//                NSLog(@"Not delegate");
+                UILabel *label = [[UILabel alloc] init];
+                label.backgroundColor = [UIColor whiteColor];
+                label.font = [label.font fontWithSize:15];
+                label.text = [NSString stringWithFormat:@"Section : %ld",(long)section];
+                label.textAlignment = NSTextAlignmentLeft;
+                return label;
+            }
+        }
+    }else{
+        return nil;
+    }
+}
+
+-(void)setMainMenuShowItemSection:(BOOL)isShow{
+    _isShowMenuItemSection = isShow;
+}
+
+-(void)setMainMenuBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode)contentMode{
+    UIImageView *tableViewImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _tableMenuItem.frame.size.width, _tableMenuItem.frame.size.height)];
+    [tableViewImage setImage:image];
+    [tableViewImage setContentMode:contentMode];
+    [_tableMenuItem setBackgroundView:tableViewImage];
+}
+
+-(void)setMainMenuBackgroundColor:(UIColor *)color{
+    UIImageView *tableViewImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _tableMenuItem.frame.size.width, _tableMenuItem.frame.size.height)];
+    [tableViewImage setBackgroundColor:color];
+    [_tableMenuItem setBackgroundView:tableViewImage];
 }
 
 @end

@@ -34,6 +34,7 @@
 -(void)hideProcess;
 
 #pragma mark - setup_navigation_bar
+@property (strong,nonatomic) UIImageView *topMainBackgroundImg;
 @property (strong,nonatomic) UIView *topPanelBar;
 @property (strong,nonatomic) UIButton *btNavBack;
 @property (strong,nonatomic) UIButton *btNavMenu;
@@ -71,6 +72,9 @@ typedef enum{
 -(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitle:(NSString *)title;
 -(void)hideTopNavigationWithAnimation:(BOOL)ani;
 
+-(void)setTopNavigationBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
+-(void)setTopNavigationBackgroundColor:(UIColor *)color;
+
 #pragma mark - setup toolbar
 @property (strong,nonatomic) UIView *bottomToolbar;
 @property (strong,nonatomic) UIImageView *toolbarImgBackground;
@@ -103,6 +107,11 @@ typedef enum{
 
 #pragma mark slide menu
 @property (strong,nonatomic) MenuViewController *slideMenu;
+@property (nonatomic) BOOL isShowSlideMenu;
+
+-(void)enableShowSlideMenu:(BOOL)enable;
+-(void)showSlideMenuWithAnimation:(BOOL)ani;
+-(void)hideSlideMenuWithAnimation:(BOOL)ani;
 
 #pragma mark - others functions - can be override
 #pragma mark navigation bar

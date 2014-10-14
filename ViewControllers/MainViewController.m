@@ -37,6 +37,7 @@
 //    [baseResource setNavigationButton5ImageName:@"search.png"];
 //    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithMenuBack andRightButtons:right_With5Buttons withTitleImage:@"test.jpg"];
     [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With3Buttons withTitle:@"Người đi buôn lậu"];
+//    [self setTopNavigationBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFill];
     
     //setup toolbar
     //contact toolbar
@@ -80,6 +81,10 @@
     [self.slideMenu showMenuBottomPanel:YES];
     
     self.slideMenu.slideMenuDelegate = self;
+    
+    [self.slideMenu setMainMenuBackgroundColor:[UIColor darkGrayColor]];
+    [self.slideMenu setMainMenuShowItemSection:YES];
+//    [self.slideMenu setMainMenuBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];
     
@@ -120,7 +125,7 @@
 //}
 
 -(NSInteger)slideMenuNumberOfSectionsInMenu{
-    return 2;
+    return 3;
 }
 
 -(NSInteger)slideMenuNumberOfItemsInMenuSection:(NSInteger)section{
@@ -130,13 +135,14 @@
             break;
             
         default:
-            return 11;
+            return 7;
             break;
     }
 }
 
 -(UITableViewCell *)slideMenuItemAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MenuCellItem"];
+    [cell setBackgroundColor:[UIColor clearColor]];
     [cell.textLabel setText:[NSString stringWithFormat:@"Cell Index: %ld",(long)indexPath.row]];
     return cell;
 }
