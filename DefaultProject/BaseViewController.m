@@ -761,7 +761,7 @@
         if (ani == YES) {
             _slideMenu.view.frame = CGRectMake(0, 0, 0, self.view.frame.size.height);
             
-            [UIView animateWithDuration:0.2 animations:^{
+            [UIView animateWithDuration:0.3 animations:^{
                 _slideMenu.view.frame = CGRectMake(0, 0, menuWid, self.view.frame.size.height);
                 for (UIView *childView in [self.view subviews]) {
                     if (childView != _slideMenu.view) {
@@ -785,7 +785,7 @@
         if (ani == YES) {
             _slideMenu.view.frame = CGRectMake(0, 0, menuWid, self.view.frame.size.height);
             
-            [UIView animateWithDuration:0.2 animations:^{
+            [UIView animateWithDuration:0.3 animations:^{
                 _slideMenu.view.frame = CGRectMake(0, 0, 0, self.view.frame.size.height);
                 for (UIView *childView in [self.view subviews]) {
                     if (childView != _slideMenu.view) {
