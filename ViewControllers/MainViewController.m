@@ -136,7 +136,7 @@
             break;
             
         default:
-            return 7;
+            return 20;
             break;
     }
 }
