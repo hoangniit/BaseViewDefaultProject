@@ -827,29 +827,6 @@
     [self createTopNavigationBarControls];
     [self createToolbar];
     [self createGesture];
-    //for test only
-    _topPanelBar.backgroundColor = [UIColor lightGrayColor];
-    //    [_btNavMenu setBackgroundColor:[UIColor greenColor]];
-    //    [_btNavBack setBackgroundColor:[UIColor greenColor]];
-    //    [_btNavRight1 setBackgroundColor:[UIColor whiteColor]];
-    //    [_lblNavRightNote1 setBackgroundColor:[UIColor redColor]];
-    //    [_lblNavRightNote1 setText:@"100"];
-    //    [_btNavRight2 setBackgroundColor:[UIColor whiteColor]];
-    [_lblNavRightNote2 setBackgroundColor:[UIColor redColor]];
-    [_lblNavRightNote2 setText:@"67"];
-    //    [_btNavRight3 setBackgroundColor:[UIColor whiteColor]];
-    //    [_lblNavRightNote3 setBackgroundColor:[UIColor redColor]];
-    //    [_lblNavRightNote3 setText:@"57"];
-    //    [_btNavRight4 setBackgroundColor:[UIColor whiteColor]];
-    //    [_lblNavRightNote4 setBackgroundColor:[UIColor greenColor]];
-    //    [_lblNavRightNote4 setText:@"New"];
-    //    [_btNavRight5 setBackgroundColor:[UIColor whiteColor]];
-    //    [_lblNavRightNote5 setBackgroundColor:[UIColor redColor]];
-    //    [_lblNavRightNote5 setText:@"LAG"];
-    //    [_lblNavTitle setBackgroundColor:[UIColor whiteColor]];
-    //
-    [_bottomToolbar setBackgroundColor:[UIColor lightGrayColor]];
-    //end test
     [self createSlideMenu];
 }
 
