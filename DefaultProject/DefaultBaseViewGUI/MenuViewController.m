@@ -179,9 +179,9 @@
             _topButtonSearch = [UIButton buttonWithType:UIButtonTypeCustom];
             _topButtonSearch.frame = CGRectMake(_topSearchField.frame.size.width + 4, 7 + topMenuYPlus, 30, 30);
             _topButtonSearch.layer.borderColor = [UIColor darkGrayColor].CGColor;
-            _topButtonSearch.layer.borderWidth = 1.0;
-            _topButtonSearch.backgroundColor = [UIColor clearColor];
-            _topButtonSearch.layer.cornerRadius = 3.0;
+//            _topButtonSearch.layer.borderWidth = 1.0;
+//            _topButtonSearch.backgroundColor = [UIColor clearColor];
+//            _topButtonSearch.layer.cornerRadius = 3.0;
             [_topButtonSearch addTarget:self action:@selector(topMenuWillSearch) forControlEvents:UIControlEventTouchUpInside];
             
             [_topPanel addSubview:_topSearchField];

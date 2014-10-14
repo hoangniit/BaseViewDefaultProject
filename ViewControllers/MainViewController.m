@@ -52,12 +52,13 @@
     NSArray *buttonTitleArr = [NSArray arrayWithObjects:@"new",@"save",@"search",@"settings",@"user",@"world", nil];
     [self setToolbarNumberOfButtons:6 withButtonWidth:60 isScrollable:YES showTitle:YES titleColor:[UIColor whiteColor] withButtonImageArray:buttonImgArr andButtonTitleArray:buttonTitleArr];
     
-    [self.slideMenu setTopMenuType:topMenuTypeImageTitleDesciption];
+    [self.slideMenu setTopMenuType:topMenuTypeSearch];
     [self.slideMenu menuTop_setImage:[UIImage imageNamed:@"save.png"]];
     [self.slideMenu menuTop_setTitle:@"Buông thần"];
     [self.slideMenu menuTop_SetTitleFontColor:[UIColor blueColor]];
     [self.slideMenu menuTop_setDescription:@"Bán thánh"];
     [self.slideMenu menuTop_setSearchButtonImage:[UIImage imageNamed:@"search.png"]];
+    [self.slideMenu menuTop_setSearchFieldPlaceHolder:@"muốn kiếm gì ku?"];
     
     [self.slideMenu setBottomMenuType:bottomMenuType3Buttons];
     BottomButtonTitles *bottomSlideTitle = [[BottomButtonTitles alloc] init];
@@ -144,6 +145,14 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MenuCellItem"];
     [cell setBackgroundColor:[UIColor clearColor]];
     [cell.textLabel setText:[NSString stringWithFormat:@"Cell Index: %ld",(long)indexPath.row]];
+    
+    cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
+    
+    UIImageView *bgView = [[UIImageView alloc]initWithFrame:cell.frame];
+    bgView.backgroundColor = [UIColor blueColor];
+    
+    cell.selectedBackgroundView  = bgView;
+    
     return cell;
 }
 

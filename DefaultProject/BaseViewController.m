@@ -742,13 +742,6 @@
     [self.view addSubview:_slideMenu.view];
     
     _slideMenu.view.frame = CGRectMake(0, 0, 0, self.view.frame.size.height);
-    [_slideMenu setTopMenuType:topMenuTypeSearch];
-    [_slideMenu menuTop_setImage:[UIImage imageNamed:@"save.png"]];
-    [_slideMenu menuTop_setTitle:@"Buông thần"];
-    [_slideMenu menuTop_SetTitleFontColor:[UIColor blueColor]];
-    [_slideMenu menuTop_setDescription:@"Bán thánh"];
-    [_slideMenu menuTop_setSearchButtonImage:[UIImage imageNamed:@"search.png"]];
-    
     _slideMenu.slideMenuDelegate = self;
 }
 
