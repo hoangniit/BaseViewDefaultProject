@@ -421,7 +421,7 @@
     
 }
 
--(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitleImage:(NSString *)imageName{
+-(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitleImage:(NSString *)imageName contentMode:(UIViewContentMode)contentMode{
     [_topPanelBar removeFromSuperview];
     [self.view addSubview:_topPanelBar];
     
@@ -458,11 +458,12 @@
     
     _imgNavTitle.frame = CGRectMake(titleX, titleY, titleWid, 30);
     [_imgNavTitle setImage:[UIImage imageNamed:imageName]];
+    [_imgNavTitle setContentMode:contentMode];
     [_topPanelBar addSubview:_imgNavTitle];
     [_topPanelBar sendSubviewToBack:_imgNavTitle];
 }
 
--(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitle:(NSString *)title{
+-(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitle:(NSString *)title titleFont:(UIFont *)titleFont titleFontColor:(UIColor *)titleFontColor{
     [_topPanelBar removeFromSuperview];
     [self.view addSubview:_topPanelBar];
     
@@ -494,6 +495,8 @@
     
     _lblNavTitle.frame = CGRectMake(titleX, titleY, titleWid, 30);
     [_lblNavTitle setText:title];
+    [_lblNavTitle setFont:titleFont];
+    [_lblNavTitle setTextColor:titleFontColor];
     [_topPanelBar addSubview:_lblNavTitle];
 }
 

@@ -27,6 +27,8 @@
     [baseResource setNavigationButton5ImageName:@"search.png"];
 }
 
+#define navTitleFont ([UIFont fontWithName:@"Helvetica-Bold" size:13.0])
+
 -(void)viewWillAppear:(BOOL)animated{
 //    [baseResource setNavigationMenuImageName:@"settings.png"];
 //    [baseResource setNavigationBackImageName:@"new.png"];
@@ -35,8 +37,9 @@
 //    [baseResource setNavigationButton3ImageName:@"save.png"];
 //    [baseResource setNavigationButton4ImageName:@"search.png"];
 //    [baseResource setNavigationButton5ImageName:@"search.png"];
-//    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithMenuBack andRightButtons:right_With5Buttons withTitleImage:@"test.jpg"];
-    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With3Buttons withTitle:@"Người đi buôn lậu"];
+//    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithMenuBack andRightButtons:right_With2Buttons withTitleImage:@"test.jpg" contentMode:UIViewContentModeScaleAspectFill];
+    [self showTopNavigationWithAnimation:YES withLeftButton:left_WithBackMenu andRightButtons:right_With3Buttons withTitle:@"Người đi buôn lậu" titleFont:navTitleFont titleFontColor:[UIColor redColor]];
+    [self setTopNavigationBackgroundColor:[UIColor lightGrayColor]];
 //    [self setTopNavigationBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFill];
     
     //setup toolbar
@@ -48,6 +51,7 @@
 //    [self setToolbarImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleAspectFit];
     //button
     [self showBottomToolbarWithAnimation:YES withToolbarType:Toolbar_type_button];
+    [self setToolbarBackgroundColor:[UIColor lightGrayColor]];
     NSArray *buttonImgArr = [NSArray arrayWithObjects:@"new.png",@"save.png",@"search.png",@"settings.png",@"user.png",@"test.jpg", nil];
     NSArray *buttonTitleArr = [NSArray arrayWithObjects:@"new",@"save",@"search",@"settings",@"user",@"world", nil];
     [self setToolbarNumberOfButtons:6 withButtonWidth:60 isScrollable:YES showTitle:YES titleColor:[UIColor whiteColor] withButtonImageArray:buttonImgArr andButtonTitleArray:buttonTitleArr];

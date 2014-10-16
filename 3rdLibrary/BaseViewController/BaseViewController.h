@@ -68,8 +68,8 @@ typedef enum{
     right_With5Buttons = 5,
 }NavigationRightButton;
 
--(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitleImage:(NSString *)imageName;
--(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitle:(NSString *)title;
+-(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitleImage:(NSString *)imageName contentMode:(UIViewContentMode) contentMode;
+-(void)showTopNavigationWithAnimation:(BOOL)ani withLeftButton:(NavigationLeftButton)leftButtons andRightButtons:(NavigationRightButton)rightButtons withTitle:(NSString *)title titleFont:(UIFont *)titleFont titleFontColor:(UIColor *)titleFontColor;
 -(void)hideTopNavigationWithAnimation:(BOOL)ani;
 
 -(void)setTopNavigationBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode) contentMode;
