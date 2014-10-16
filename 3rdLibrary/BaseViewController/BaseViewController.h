@@ -112,6 +112,8 @@ typedef enum{
 -(void)enableShowSlideMenu:(BOOL)enable;
 -(void)showSlideMenuWithAnimation:(BOOL)ani;
 -(void)hideSlideMenuWithAnimation:(BOOL)ani;
+-(void)createSlideMenuGesture;
+-(void)createBackgroundSlideMenu;
 
 #pragma mark - others functions - can be override
 #pragma mark navigation bar

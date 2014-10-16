@@ -85,6 +85,7 @@
     
     [self.slideMenu setMainMenuBackgroundColor:[UIColor darkGrayColor]];
     [self.slideMenu setMainMenuShowItemSection:YES];
+    [self enableShowSlideMenu:YES];
 //    [self.slideMenu setMainMenuBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];
 //    [self setToolbarBackgroundColor:[UIColor redColor]];
 //    [self setToolbarBackgroundImage:[UIImage imageNamed:@"test.jpg"] withContentMode:UIViewContentModeScaleToFill];

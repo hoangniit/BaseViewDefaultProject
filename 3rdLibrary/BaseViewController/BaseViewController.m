@@ -734,7 +734,7 @@
 }
 
 #pragma mark slide menu
--(void)createSlideMenu{
+-(void)createBackgroundSlideMenu{
     if (_slideMenu == nil) {
         _slideMenu = [[MenuViewController alloc] init];
     }
@@ -798,7 +798,7 @@
     }
 }
 
--(void)createGesture{
+-(void)createSlideMenuGesture{
     UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureShowMenu)];
     rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     rightRecognizer.numberOfTouchesRequired = 1;
@@ -811,11 +811,15 @@
 }
 
 -(void)gestureShowMenu{
-    [self showSlideMenuWithAnimation:YES];
+    if (_isShowSlideMenu == YES) {
+        [self showSlideMenuWithAnimation:YES];
+    }
 }
 
 -(void)gestureHideMenu{
-    [self hideSlideMenuWithAnimation:YES];
+    if (_isShowSlideMenu == YES) {
+        [self hideSlideMenuWithAnimation:YES];
+    }
 }
 
 #pragma mark - view setup
@@ -826,8 +830,8 @@
     [self createMainProcessView];
     [self createTopNavigationBarControls];
     [self createToolbar];
-    [self createGesture];
-    [self createSlideMenu];
+    [self createSlideMenuGesture];
+    [self createBackgroundSlideMenu];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -841,10 +845,12 @@
 
 -(void)tapNavMenuButton{
     NSLog(@"Tap menu");
-    if (_slideMenu.view.frame.size.width > 0) {
-        [self hideSlideMenuWithAnimation:YES];
-    }else{
-        [self showSlideMenuWithAnimation:YES];
+    if (_isShowSlideMenu == YES) {
+        if (_slideMenu.view.frame.size.width > 0) {
+            [self hideSlideMenuWithAnimation:YES];
+        }else{
+            [self showSlideMenuWithAnimation:YES];
+        }
     }
 }
 
