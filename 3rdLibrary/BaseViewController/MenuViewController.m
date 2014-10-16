@@ -612,7 +612,6 @@
         }else{
             @try {
                 UIView *viewHeader = [_slideMenuDelegate slideMenuViewForHeaderInSection:section];
-                _tableMenuItem.tableHeaderView = viewHeader;
                 return viewHeader;
             }
             @catch (NSException *exception) {
