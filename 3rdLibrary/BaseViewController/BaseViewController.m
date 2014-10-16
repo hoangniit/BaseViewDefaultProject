@@ -833,8 +833,8 @@
     [self createMainProcessView];
     [self createTopNavigationBarControls];
     [self createToolbar];
-    [self createSlideMenuGesture];
-    [self createBackgroundSlideMenu];
+//    [self createSlideMenuGesture];
+//    [self createBackgroundSlideMenu];
 }
 
 - (void)didReceiveMemoryWarning {
