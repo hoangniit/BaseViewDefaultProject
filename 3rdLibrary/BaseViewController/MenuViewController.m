@@ -546,12 +546,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!_slideMenuDelegate) {
+        [_tableMenuItem deselectRowAtIndexPath:indexPath animated:YES];
         NSLog(@"Not delegate, tap item at index: %@ of section %@", [NSString stringWithFormat:@"%ld",(long)indexPath.row],[NSString stringWithFormat:@"%ld",(long)indexPath.section]);
     }else{
         @try {
+            [_tableMenuItem deselectRowAtIndexPath:indexPath animated:YES];
             return [_slideMenuDelegate slideMenuDidSelectItemAtIndexPath:indexPath];
         }
         @catch (NSException *exception) {
+            [_tableMenuItem deselectRowAtIndexPath:indexPath animated:YES];
             NSLog(@"Not delegate, tap item at index: %@ of section %@", [NSString stringWithFormat:@"%ld",(long)indexPath.row],[NSString stringWithFormat:@"%ld",(long)indexPath.section]);
         }
     }
