@@ -482,7 +482,7 @@
     float wid = 228;
     float hei = self.view.frame.size.height;
     //setup bottom menu
-    if (_isShowBottomMenu == YES) {
+    if (_isShowTopMenu == YES) {
         y = _topPanel.frame.size.height;
         hei = hei - 44;
     }
@@ -492,7 +492,7 @@
     if (is_IOS7_or_Later) {
         heiUnplus = 20.0;
     }
-    if (_isShowTopMenu == YES) {
+    if (_isShowBottomMenu == YES) {
         hei = hei - 44 - heiUnplus;
     }
     
