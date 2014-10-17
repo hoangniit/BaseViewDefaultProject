@@ -120,18 +120,18 @@
 //    }
 //}
 
-//-(void)tapToolbarButtonAtIndex:(NSIndexPath *)indexPath{
-//    if (indexPath.row == 1) {
-//        NSLog(@"Delegate tap button at index 1");
-//    }else if (indexPath.row == 3){
-//        NSLog(@"Delegate tap button at index 3");
-//    }else{
-//        NSLog(@"Unknow");
-//    }
-//}
+-(void)tapToolbarButtonAtIndex:(NSIndexPath *)indexPath{
+    if (indexPath.row == 1) {
+        NSLog(@"Delegate tap button at index 1");
+    }else if (indexPath.row == 3){
+        NSLog(@"Delegate tap button at index 3");
+    }else{
+        NSLog(@"Unknow");
+    }
+}
 
 -(NSInteger)slideMenuNumberOfSectionsInMenu{
-    return 3;
+    return 7;
 }
 
 -(NSInteger)slideMenuNumberOfItemsInMenuSection:(NSInteger)section{
@@ -141,7 +141,7 @@
             break;
             
         default:
-            return 20;
+            return 3;
             break;
     }
 }

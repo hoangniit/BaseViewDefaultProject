@@ -646,4 +646,8 @@
     [_tableMenuItem setBackgroundView:tableViewImage];
 }
 
+-(void)reloadMenuData{
+    [_tableMenuItem reloadData];
+}
+
 @end

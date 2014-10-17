@@ -170,5 +170,6 @@ typedef enum{
 -(void)setMainMenuShowItemSection:(BOOL)isShow;
 -(void)setMainMenuBackgroundImage:(UIImage *)image withContentMode:(UIViewContentMode)contentMode;
 -(void)setMainMenuBackgroundColor:(UIColor *)color;
+-(void)reloadMenuData;
 
 @end
