@@ -775,6 +775,7 @@
             }
         }
     }
+    [self.view endEditing:YES];
 }
 
 -(void)hideSlideMenuWithAnimation:(BOOL)ani{
