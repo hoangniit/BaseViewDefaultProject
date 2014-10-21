@@ -104,7 +104,6 @@ typedef enum{
 
 #pragma mark button toolbar
 -(void)setToolbarNumberOfButtons:(int)numberOfButtons withButtonWidth:(float)buttonWid isScrollable:(BOOL)isScrollable showTitle:(BOOL)isShowTitle titleColor:(UIColor *)color withButtonImageArray:(NSArray *)imageArr andButtonTitleArray:(NSArray *)titleArray;
--(void)reloadToolbarButton;
 
 #pragma mark slide menu
 @property (strong,nonatomic) MenuViewController *slideMenu;

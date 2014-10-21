@@ -736,13 +736,6 @@
     [_bottomButtonView updateScrollable];
 }
 
--(void)reloadToolbarButton{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [_bottomButtonView.buttonCollectionView reloadData];
-        [_bottomButtonView.buttonCollectionView reloadInputViews];
-    });
-}
-
 #pragma mark slide menu
 -(void)createBackgroundSlideMenu{
     if (_slideMenu == nil) {
