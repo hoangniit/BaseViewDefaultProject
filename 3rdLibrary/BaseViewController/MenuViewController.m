@@ -79,7 +79,7 @@
 
 -(void)setTopMenuType:(TopMenuType)topType{
     for (UIView *childView in [_topPanel subviews]) {
-        if (childView != _topPanelBackground) {
+        if ((childView != _topPanelBackground) && (childView != _topPanelLine)) {
             [childView removeFromSuperview];
         }
     }
@@ -272,7 +272,7 @@
 
 -(void)setBottomMenuType:(BottomMenuType)bottomMenuType{
     for (UIView *childView in [_bottomPanel subviews]) {
-        if (childView != _bottomPanelBackground) {
+        if ((childView != _bottomPanelBackground) && (childView != _bottomPanelLine)){
             [childView removeFromSuperview];
         }
     }

@@ -85,6 +85,7 @@ typedef enum{
 
 @property (strong,nonatomic) IBOutlet UIView *topPanel;
 @property (strong,nonatomic) IBOutlet UIImageView *topPanelBackground;
+@property (strong,nonatomic) IBOutlet UIImageView *topPanelLine;
 @property (nonatomic) TopMenuType topType;
 @property (nonatomic) BOOL isShowTopMenu;
 
@@ -131,6 +132,7 @@ typedef enum{
 
 @property (strong,nonatomic) IBOutlet UIView *bottomPanel;
 @property (strong,nonatomic) IBOutlet UIImageView *bottomPanelBackground;
+@property (strong,nonatomic) IBOutlet UIImageView *bottomPanelLine;
 
 @property (nonatomic) BOOL showBottomPanelText;
 @property (nonatomic) BottomMenuType bottomMenuType;
