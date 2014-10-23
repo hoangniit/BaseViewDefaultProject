@@ -106,6 +106,10 @@
     }
     _topPanelBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     _topPanelBar.clipsToBounds = YES;
+    _topPanelBar.layer.masksToBounds = NO;
+    _topPanelBar.layer.shadowOffset = CGSizeMake(0, 5);
+    _topPanelBar.layer.shadowRadius = 3;
+    _topPanelBar.layer.shadowOpacity = 0.2;
     
     if (_btNavMenu == nil) {
         _btNavMenu = [[UIButton alloc] init];
@@ -572,6 +576,10 @@
     }
     _bottomToolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     _bottomToolbar.clipsToBounds = YES;
+    _bottomToolbar.layer.masksToBounds = NO;
+    _bottomToolbar.layer.shadowOffset = CGSizeMake(0, -5);
+    _bottomToolbar.layer.shadowRadius = 3;
+    _bottomToolbar.layer.shadowOpacity = 0.2;
     
     if (_toolbarImgBackground == nil) {
         _toolbarImgBackground = [[UIImageView alloc] init];
